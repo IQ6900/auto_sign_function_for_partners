@@ -1,26 +1,27 @@
-import {Keypair, Transaction,SystemProgram, PublicKey,Connection} from "@solana/web3.js";
+import {Connection, Keypair, SystemProgram, Transaction} from "@solana/web3.js";
 import bs58 from 'bs58';
+import imgToAsciiArt from "./ascii_genetate"
+import {compressText} from "./compress"
 
 const anchor = require('@coral-xyz/anchor');
 const express = require('express');
 const cors = require('cors');
 const idl = require("../idl.json");  // Make sure this is the correct path to your IDL file
-const network ='https://api.mainnet-beta.solana.com'
-const iqHost = "https://solanacontractapi.uc.r.appspot.com";
+const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09"
+const iqHost =  "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const expected_receiver =  new PublicKey("GbgepibVcKMbLW6QaFrhUGG34WDvJ2SKvznL2HUuquZh");
-const secretKeyBase58 = "personalKeyFromPhantom"; //paste your transaction
+const secretKeyBase58 = "paste your transaction"; //paste your transaction
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
-const chunkSize = 850;
+const transactionSizeLimit = 850;
+const sizeLimitForSplitCompression = 10000;
 
 const amountToSend = 0.003 * web3.LAMPORTS_PER_SOL;
 const app = express();
 
 
 app.use(express.json());
-
 
 
 async function getPDA(userKey: string): Promise<string | undefined> {
@@ -53,20 +54,48 @@ async function getDBPDA(userKey: string): Promise<string> {
     }
 }
 
+async function getMerkleRootFromServer(dataList: Array<string>) {
+    const url = iqHost + "/generate-merkle-root"; // 서버 URL
+    const requestData = {
+        data: dataList, // 데이터 배열
+    };
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`);
+        }
+
+        const responseData = await response.json();
+        console.log("Merkle Root:", responseData.merkleRoot);
+        return responseData.merkleRoot;
+
+    } catch (error) {
+        console.error("Failed to get Merkle Root:", error);
+        throw error;
+    }
+}
+
 async function txSend(tx: Transaction): Promise<string> {
     const connection = new Connection(network, 'confirmed');
-    const { blockhash } = await connection.getRecentBlockhash();
+    const {blockhash} = await connection.getLatestBlockhash();
     tx.recentBlockhash = blockhash;
     tx.feePayer = keypair.publicKey;
     tx.sign(keypair);
-    const txid =  await web3.sendAndConfirmTransaction(connection, tx, [keypair]);
+    const txid = await web3.sendAndConfirmTransaction(connection, tx, [keypair]);
 
     console.log('Transaction sent, txid:', txid);
     return txid;
 
 }
 
-async function createSendTransaction(code:string, before_tx:string, method:number, decode_break:number) {
+async function createSendTransaction(code: string, before_tx: string, method: number, decode_break: number) {
     try {
         const userKey = keypair.publicKey;
         const PDA = await getPDA(userKey.toString());
@@ -83,14 +112,14 @@ async function createSendTransaction(code:string, before_tx:string, method:numbe
             }).instruction();
 
         await tx.add(ix);
-        return txSend(tx);
+        return tx;
     } catch (error) {
         console.error(error);
         throw new Error("Failed to create instruction: " + error);
     }
 }
 
-async function createDbCodeTransaction(handle:string, tail_tx:string, type:string, offset:string) {
+async function createDbCodeTransaction(handle: string, tail_tx: string, type: string, offset: string) {
     try {
         const userKey = keypair.publicKey;
         const DBPDA = await getDBPDA(userKey.toString());
@@ -108,13 +137,13 @@ async function createDbCodeTransaction(handle:string, tail_tx:string, type:strin
             }).instruction();
 
         await tx.add(dbcodefreeix);
-        return txSend(tx);
+        return tx;
     } catch (error) {
         throw new Error("Failed to create instruction: " + error);
     }
 }
 
-async function getChunk(textData:string): Promise<string[]>  {
+async function getChunk(textData: string , chunkSize:number): Promise<string[]> {
     const datalength = textData.length;
     const totalChunks = Math.ceil(datalength / chunkSize);
     let chunks = [];
@@ -129,25 +158,128 @@ async function getChunk(textData:string): Promise<string[]>  {
         return chunks;
     }
 }
-async function makeTextTransactions(chunkList:Array<string>, handle:string, type:string, offset:string) {
-    let beforeHash: string  = "Genesis";
+
+async function makeTextTransactions(chunkList: Array<string>, handle: string, type: string, offset: string) {
+    let beforeHash: string = "Genesis";
     let method = 0;
     let decode_break = 0;
 
     for (let text of chunkList) {
-        beforeHash = await createSendTransaction(text,beforeHash,method,decode_break)
+        beforeHash = await createSendTransaction(text, beforeHash, method, decode_break)
     }
-    const resultHash = await createDbCodeTransaction(handle,beforeHash,type,offset)
-    return resultHash;
+    return await createDbCodeTransaction(handle, beforeHash, type, offset);
+}
+interface chunkObj  {
+    text_list: Array<string>;
+    method: number;
+}
+async function makeAsciiTransactions( chunkList: Array<chunkObj>, handle: string, type: string, offset: string) {
+    let beforeHash = "Genesis";
+
+    for (let chunks of chunkList) {
+        let textList = chunks.text_list;
+        let method = chunks.method;
+        let decode_break = 0;
+        let i = 0;
+
+        for (let text of textList) {
+            if (i == textList.length - 1) {
+                decode_break = 1;
+            }
+            if (i < textList.length) {
+                const tx = await createSendTransaction(text, beforeHash, method, decode_break);
+                beforeHash = await txSend(tx);
+
+
+            } else {
+                const tx = await createSendTransaction(text, beforeHash, method, decode_break);
+                beforeHash = await txSend(tx);
+
+            }
+            i += 1;
+            if (beforeHash === "error") {
+                alert("error on transaction");
+                return false;
+            }
+
+        }
+    }
+    return await createDbCodeTransaction(handle, beforeHash, type, offset);
 }
 
+
+async function _makeAsciiChunks(asciiArt:string,width:number) {
+    let textChunks = []
+    let compressedChunks = []
+    let totalChunks = []
+    let chunkSize = 0;
+    let innerOffset = "[ width: "+width.toString()+" ]"
+    let full_msg= innerOffset+asciiArt;
+
+
+    textChunks = await getChunk(full_msg, sizeLimitForSplitCompression);
+
+    const merkleRoot = await getMerkleRootFromServer(textChunks);
+    for (let textChunk of textChunks) {
+        let _compressChunk = await compressText(textChunk);
+        compressedChunks.push(_compressChunk);
+    }
+    for (let compressChunk of compressedChunks) {
+        let _contractchunks = await getChunk(compressChunk.result, transactionSizeLimit);
+        const chunkObj = {
+            text_list: _contractchunks,
+            method: compressChunk.method,//offset
+        }
+        await totalChunks.push(chunkObj);
+        chunkSize += _contractchunks.length;
+    }
+    return {
+        chunkList: totalChunks,
+        chunkSize: chunkSize,
+        merkleRoot: merkleRoot,
+    };
+}
+
+interface AsciiArt {
+    result: string;
+    width: number;
+}
+
+async function OnChainCodeIn(asciiArt:AsciiArt) {
+
+    try {
+
+        const handle = "anonymous"; // edit with twitter api
+
+        let chunkObj = await _makeAsciiChunks(asciiArt.result,asciiArt.width);
+        const chunkList = chunkObj.chunkList;
+        const chunkSize = chunkObj.chunkSize;
+        const merkleRoot = chunkObj.merkleRoot;
+        const offset = merkleRoot;
+
+        const dataType = "image";
+        console.log("Chunk size: ", chunkSize);
+
+        return await makeAsciiTransactions(chunkList, handle, dataType, offset);
+
+    } catch (error) {
+        console.error("Error signing or sending transaction: ", error);
+    }
+
+}
 
 // //--------------------------Example Code--------------------------------
 async function run() {
-    const textdata = "longtext  longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext "
-    const chunkList = await getChunk(textdata)
-    const result = await makeTextTransactions(chunkList, "binary", "text", "no offset")
-    console.log("Result Transaction: "+result);
+    const image = await imgToAsciiArt("./images/700.png");
+
+    const asciiArt:AsciiArt ={
+        result: image.result,
+        width: image.width
+    }
+
+    const result = OnChainCodeIn(asciiArt)
+    console.log(result);
 }
+
 run()
 

@@ -37,18 +37,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var web3_js_1 = require("@solana/web3.js");
+var bs58_1 = require("bs58");
+var ascii_genetate_1 = require("./ascii_genetate");
+var compress_1 = require("./compress");
 var anchor = require('@coral-xyz/anchor');
 var express = require('express');
 var cors = require('cors');
 var idl = require("../idl.json"); // Make sure this is the correct path to your IDL file
-var network = 'https://api.mainnet-beta.solana.com';
+var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var expected_receiver = new web3_js_1.PublicKey("GbgepibVcKMbLW6QaFrhUGG34WDvJ2SKvznL2HUuquZh");
-// const secretKeyBase58 = "personalKeyFromPhantom"; //paste your transaction
-// const secretKey = bs58.decode(secretKeyBase58);
-// const keypair = Keypair.fromSecretKey(secretKey);
-var chunkSize = 850;
+var secretKeyBase58 = "paste your transaction"; //paste your transaction
+var secretKey = bs58_1.default.decode(secretKeyBase58);
+var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
+var transactionSizeLimit = 850;
+var sizeLimitForSplitCompression = 10000;
 var amountToSend = 0.003 * web3.LAMPORTS_PER_SOL;
 var app = express();
 app.use(express.json());
@@ -110,6 +113,45 @@ function getDBPDA(userKey) {
         });
     });
 }
+function getMerkleRootFromServer(dataList) {
+    return __awaiter(this, void 0, void 0, function () {
+        var url, requestData, response, responseData, error_3;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    url = iqHost + "/generate-merkle-root";
+                    requestData = {
+                        data: dataList, // 데이터 배열
+                    };
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 4, , 5]);
+                    return [4 /*yield*/, fetch(url, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(requestData),
+                        })];
+                case 2:
+                    response = _a.sent();
+                    if (!response.ok) {
+                        throw new Error("Error: ".concat(response.statusText));
+                    }
+                    return [4 /*yield*/, response.json()];
+                case 3:
+                    responseData = _a.sent();
+                    console.log("Merkle Root:", responseData.merkleRoot);
+                    return [2 /*return*/, responseData.merkleRoot];
+                case 4:
+                    error_3 = _a.sent();
+                    console.error("Failed to get Merkle Root:", error_3);
+                    throw error_3;
+                case 5: return [2 /*return*/];
+            }
+        });
+    });
+}
 function txSend(tx) {
     return __awaiter(this, void 0, void 0, function () {
         var connection, blockhash, txid;
@@ -117,7 +159,7 @@ function txSend(tx) {
             switch (_a.label) {
                 case 0:
                     connection = new web3_js_1.Connection(network, 'confirmed');
-                    return [4 /*yield*/, connection.getRecentBlockhash()];
+                    return [4 /*yield*/, connection.getLatestBlockhash()];
                 case 1:
                     blockhash = (_a.sent()).blockhash;
                     tx.recentBlockhash = blockhash;
@@ -134,7 +176,7 @@ function txSend(tx) {
 }
 function createSendTransaction(code, before_tx, method, decode_break) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, PDA, program, tx, ix, error_3;
+        var userKey, PDA, program, tx, ix, error_4;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -159,11 +201,11 @@ function createSendTransaction(code, before_tx, method, decode_break) {
                     return [4 /*yield*/, tx.add(ix)];
                 case 3:
                     _a.sent();
-                    return [2 /*return*/, txSend(tx)];
+                    return [2 /*return*/, tx];
                 case 4:
-                    error_3 = _a.sent();
-                    console.error(error_3);
-                    throw new Error("Failed to create instruction: " + error_3);
+                    error_4 = _a.sent();
+                    console.error(error_4);
+                    throw new Error("Failed to create instruction: " + error_4);
                 case 5: return [2 /*return*/];
             }
         });
@@ -171,53 +213,41 @@ function createSendTransaction(code, before_tx, method, decode_break) {
 }
 function createDbCodeTransaction(handle, tail_tx, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, DBPDA, program, tx, transix, dbcodeix, error_4;
+        var userKey, DBPDA, program, tx, dbcodefreeix, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 6, , 7]);
+                    _a.trys.push([0, 4, , 5]);
                     userKey = keypair.publicKey;
                     return [4 /*yield*/, getDBPDA(userKey.toString())];
                 case 1:
                     DBPDA = _a.sent();
                     program = new anchor.Program(idl, userKey);
                     tx = new web3.Transaction({
-                        feePayer: userKey,
+                        feePayer: userKey, // 수수료 지불자 설정
                     });
-                    return [4 /*yield*/, web3.SystemProgram.transfer({
-                            fromPubkey: userKey,
-                            toPubkey: new web3_js_1.PublicKey(DBPDA),
-                            lamports: amountToSend,
-                        })];
-                case 2:
-                    transix = _a.sent();
-                    return [4 /*yield*/, tx.add(transix)];
-                case 3:
-                    _a.sent();
                     return [4 /*yield*/, program.methods
-                            .dbCodeIn(handle, tail_tx, type, offset)
+                            .dbCodeInForFree(handle, tail_tx, type, offset)
                             .accounts({
                             user: userKey,
                             dbAccount: DBPDA,
                             systemProgram: web3_js_1.SystemProgram.programId,
-                        }).remainingAccounts([
-                            { pubkey: expected_receiver, isSigner: false, isWritable: true },
-                        ]).instruction()];
-                case 4:
-                    dbcodeix = _a.sent();
-                    return [4 /*yield*/, tx.add(dbcodeix)];
-                case 5:
+                        }).instruction()];
+                case 2:
+                    dbcodefreeix = _a.sent();
+                    return [4 /*yield*/, tx.add(dbcodefreeix)];
+                case 3:
                     _a.sent();
-                    return [2 /*return*/, txSend(tx)];
-                case 6:
-                    error_4 = _a.sent();
-                    throw new Error("Failed to create instruction: " + error_4);
-                case 7: return [2 /*return*/];
+                    return [2 /*return*/, tx];
+                case 4:
+                    error_5 = _a.sent();
+                    throw new Error("Failed to create instruction: " + error_5);
+                case 5: return [2 /*return*/];
             }
         });
     });
 }
-function getChunk(textData) {
+function getChunk(textData, chunkSize) {
     return __awaiter(this, void 0, void 0, function () {
         var datalength, totalChunks, chunks, i, start, end;
         return __generator(this, function (_a) {
@@ -253,7 +283,7 @@ function getChunk(textData) {
 }
 function makeTextTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var beforeHash, method, decode_break, _i, chunkList_1, text, resultHash;
+        var beforeHash, method, decode_break, _i, chunkList_1, text;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -273,62 +303,175 @@ function makeTextTransactions(chunkList, handle, type, offset) {
                     _i++;
                     return [3 /*break*/, 1];
                 case 4: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
-                case 5:
-                    resultHash = _a.sent();
-                    return [2 /*return*/, resultHash];
+                case 5: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
-function _getChunk_ForText(message) {
+function makeAsciiTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var encoder, messageBytes, chunks, currentChunk, currentChunkSize, i, byte;
+        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx, tx;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    beforeHash = "Genesis";
+                    _i = 0, chunkList_2 = chunkList;
+                    _b.label = 1;
+                case 1:
+                    if (!(_i < chunkList_2.length)) return [3 /*break*/, 11];
+                    chunks = chunkList_2[_i];
+                    textList = chunks.text_list;
+                    method = chunks.method;
+                    decode_break = 0;
+                    i = 0;
+                    _a = 0, textList_1 = textList;
+                    _b.label = 2;
+                case 2:
+                    if (!(_a < textList_1.length)) return [3 /*break*/, 10];
+                    text = textList_1[_a];
+                    if (i == textList.length - 1) {
+                        decode_break = 1;
+                    }
+                    if (!(i < textList.length)) return [3 /*break*/, 5];
+                    return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
+                case 3:
+                    tx = _b.sent();
+                    return [4 /*yield*/, txSend(tx)];
+                case 4:
+                    beforeHash = _b.sent();
+                    return [3 /*break*/, 8];
+                case 5: return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
+                case 6:
+                    tx = _b.sent();
+                    return [4 /*yield*/, txSend(tx)];
+                case 7:
+                    beforeHash = _b.sent();
+                    _b.label = 8;
+                case 8:
+                    i += 1;
+                    if (beforeHash === "error") {
+                        alert("error on transaction");
+                        return [2 /*return*/, false];
+                    }
+                    _b.label = 9;
+                case 9:
+                    _a++;
+                    return [3 /*break*/, 2];
+                case 10:
+                    _i++;
+                    return [3 /*break*/, 1];
+                case 11: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
+                case 12: return [2 /*return*/, _b.sent()];
+            }
+        });
+    });
+}
+function _makeAsciiChunks(asciiArt, width) {
+    return __awaiter(this, void 0, void 0, function () {
+        var textChunks, compressedChunks, totalChunks, chunkSize, innerOffset, full_msg, merkleRoot, _i, textChunks_1, textChunk, _compressChunk, _a, compressedChunks_1, compressChunk, _contractchunks, chunkObj;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    textChunks = [];
+                    compressedChunks = [];
+                    totalChunks = [];
+                    chunkSize = 0;
+                    innerOffset = "[ width: " + width.toString() + " ]";
+                    full_msg = innerOffset + asciiArt;
+                    return [4 /*yield*/, getChunk(full_msg, sizeLimitForSplitCompression)];
+                case 1:
+                    textChunks = _b.sent();
+                    return [4 /*yield*/, getMerkleRootFromServer(textChunks)];
+                case 2:
+                    merkleRoot = _b.sent();
+                    _i = 0, textChunks_1 = textChunks;
+                    _b.label = 3;
+                case 3:
+                    if (!(_i < textChunks_1.length)) return [3 /*break*/, 6];
+                    textChunk = textChunks_1[_i];
+                    return [4 /*yield*/, (0, compress_1.compressText)(textChunk)];
+                case 4:
+                    _compressChunk = _b.sent();
+                    compressedChunks.push(_compressChunk);
+                    _b.label = 5;
+                case 5:
+                    _i++;
+                    return [3 /*break*/, 3];
+                case 6:
+                    _a = 0, compressedChunks_1 = compressedChunks;
+                    _b.label = 7;
+                case 7:
+                    if (!(_a < compressedChunks_1.length)) return [3 /*break*/, 11];
+                    compressChunk = compressedChunks_1[_a];
+                    return [4 /*yield*/, getChunk(compressChunk.result, transactionSizeLimit)];
+                case 8:
+                    _contractchunks = _b.sent();
+                    chunkObj = {
+                        text_list: _contractchunks,
+                        method: compressChunk.method, //offset
+                    };
+                    return [4 /*yield*/, totalChunks.push(chunkObj)];
+                case 9:
+                    _b.sent();
+                    chunkSize += _contractchunks.length;
+                    _b.label = 10;
+                case 10:
+                    _a++;
+                    return [3 /*break*/, 7];
+                case 11: return [2 /*return*/, {
+                        chunkList: totalChunks,
+                        chunkSize: chunkSize,
+                        merkleRoot: merkleRoot,
+                    }];
+            }
+        });
+    });
+}
+function OnChainCodeIn(asciiArt) {
+    return __awaiter(this, void 0, void 0, function () {
+        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, result, error_6;
         return __generator(this, function (_a) {
-            encoder = new TextEncoder();
-            messageBytes = encoder.encode(message);
-            chunks = [];
-            currentChunk = [];
-            currentChunkSize = 0;
-            i = 0;
-            while (currentChunkSize <= chunkSize) {
-                byte = messageBytes[i];
-                currentChunk.push(byte);
-                currentChunkSize++;
-                if (currentChunkSize >= chunkSize) {
-                    chunks.push(new TextDecoder().decode(new Uint8Array(currentChunk))); // 청크를 문자열로 변환
-                    currentChunk = [];
-                    currentChunkSize = 0;
-                }
-                i++;
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    handle = "anonymous";
+                    return [4 /*yield*/, _makeAsciiChunks(asciiArt.result, asciiArt.width)];
+                case 1:
+                    chunkObj = _a.sent();
+                    chunkList = chunkObj.chunkList;
+                    chunkSize = chunkObj.chunkSize;
+                    merkleRoot = chunkObj.merkleRoot;
+                    offset = merkleRoot;
+                    dataType = "image";
+                    console.log("Chunk size: ", chunkSize);
+                    return [4 /*yield*/, makeAsciiTransactions(chunkList, handle, dataType, offset)];
+                case 2:
+                    result = _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_6 = _a.sent();
+                    console.error("Error signing or sending transaction: ", error_6);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
             }
-            if (currentChunkSize > 0) {
-                chunks.push(new TextDecoder().decode(new Uint8Array(currentChunk)));
-            }
-            return [2 /*return*/, chunks];
         });
     });
 }
 // //--------------------------Example Code--------------------------------
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var textdata, eng_chunkList, kor_textdata, kor_chunkList;
+        var image, asciiArt, result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    textdata = "longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext longtext ";
-                    return [4 /*yield*/, _getChunk_ForText(textdata)];
+                case 0: return [4 /*yield*/, (0, ascii_genetate_1.default)("./images/700.png")];
                 case 1:
-                    eng_chunkList = _a.sent();
-                    kor_textdata = "이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무 이글정말길어너무";
-                    return [4 /*yield*/, _getChunk_ForText(kor_textdata)];
-                case 2:
-                    kor_chunkList = _a.sent();
-                    console.log("eng len: " + textdata.length);
-                    console.log("eng list: " + eng_chunkList);
-                    console.log("eng chunklen: " + eng_chunkList.length);
-                    console.log("kor len: " + kor_textdata.length);
-                    console.log("kor list: " + kor_chunkList);
-                    console.log("kor chunklen: " + kor_chunkList.length);
+                    image = _a.sent();
+                    asciiArt = {
+                        result: image.result,
+                        width: image.width
+                    };
+                    result = OnChainCodeIn(asciiArt);
+                    console.log(result);
                     return [2 /*return*/];
             }
         });
