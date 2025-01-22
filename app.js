@@ -47,7 +47,7 @@ var idl = require("../idl.json"); // Make sure this is the correct path to your 
 var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var secretKeyBase58 = "paste your transaction"; //paste your transaction
+var secretKeyBase58 = "Your Secret Key"; //paste your transaction
 var secretKey = bs58_1.default.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
@@ -310,7 +310,7 @@ function makeTextTransactions(chunkList, handle, type, offset) {
 }
 function makeAsciiTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx, tx;
+        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx_1, tx_2, tx;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -335,15 +335,15 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                     if (!(i < textList.length)) return [3 /*break*/, 5];
                     return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 3:
-                    tx = _b.sent();
-                    return [4 /*yield*/, txSend(tx)];
+                    tx_1 = _b.sent();
+                    return [4 /*yield*/, txSend(tx_1)];
                 case 4:
                     beforeHash = _b.sent();
                     return [3 /*break*/, 8];
                 case 5: return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 6:
-                    tx = _b.sent();
-                    return [4 /*yield*/, txSend(tx)];
+                    tx_2 = _b.sent();
+                    return [4 /*yield*/, txSend(tx_2)];
                 case 7:
                     beforeHash = _b.sent();
                     _b.label = 8;
@@ -361,7 +361,10 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                     _i++;
                     return [3 /*break*/, 1];
                 case 11: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
-                case 12: return [2 /*return*/, _b.sent()];
+                case 12:
+                    tx = _b.sent();
+                    return [4 /*yield*/, txSend(tx)];
+                case 13: return [2 /*return*/, _b.sent()];
             }
         });
     });
@@ -429,7 +432,7 @@ function _makeAsciiChunks(asciiArt, width) {
 }
 function OnChainCodeIn(asciiArt) {
     return __awaiter(this, void 0, void 0, function () {
-        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, result, error_6;
+        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, error_6;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -445,9 +448,7 @@ function OnChainCodeIn(asciiArt) {
                     dataType = "image";
                     console.log("Chunk size: ", chunkSize);
                     return [4 /*yield*/, makeAsciiTransactions(chunkList, handle, dataType, offset)];
-                case 2:
-                    result = _a.sent();
-                    return [3 /*break*/, 4];
+                case 2: return [2 /*return*/, _a.sent()];
                 case 3:
                     error_6 = _a.sent();
                     console.error("Error signing or sending transaction: ", error_6);
@@ -470,8 +471,10 @@ function run() {
                         result: image.result,
                         width: image.width
                     };
-                    result = OnChainCodeIn(asciiArt);
-                    console.log(result);
+                    return [4 /*yield*/, OnChainCodeIn(asciiArt)];
+                case 2:
+                    result = _a.sent();
+                    console.log("Db Trx", result);
                     return [2 /*return*/];
             }
         });

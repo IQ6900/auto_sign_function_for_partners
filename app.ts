@@ -11,7 +11,7 @@ const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a
 const iqHost =  "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const secretKeyBase58 = "paste your transaction"; //paste your transaction
+const secretKeyBase58 = "Your Secret Key"; //paste your transaction
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
 const transactionSizeLimit = 850;
@@ -204,7 +204,8 @@ async function makeAsciiTransactions( chunkList: Array<chunkObj>, handle: string
 
         }
     }
-    return await createDbCodeTransaction(handle, beforeHash, type, offset);
+     const tx =await createDbCodeTransaction(handle, beforeHash, type, offset);
+    return await txSend(tx);
 }
 
 
@@ -262,6 +263,7 @@ async function OnChainCodeIn(asciiArt:AsciiArt) {
 
         return await makeAsciiTransactions(chunkList, handle, dataType, offset);
 
+
     } catch (error) {
         console.error("Error signing or sending transaction: ", error);
     }
@@ -277,8 +279,8 @@ async function run() {
         width: image.width
     }
 
-    const result = OnChainCodeIn(asciiArt)
-    console.log(result);
+    const result = await OnChainCodeIn(asciiArt)
+    console.log("Db Trx",result);
 }
 
 run()
