@@ -165,9 +165,12 @@ async function makeTextTransactions(chunkList: Array<string>, handle: string, ty
     let decode_break = 0;
 
     for (let text of chunkList) {
-        beforeHash = await createSendTransaction(text, beforeHash, method, decode_break)
+        const tx = await createSendTransaction(text, beforeHash, method, decode_break);
+        beforeHash = await txSend(tx);
+
     }
-    return await createDbCodeTransaction(handle, beforeHash, type, offset);
+    const tx = await createDbCodeTransaction(handle, beforeHash, type, offset);
+    return await txSend(tx);
 }
 interface chunkObj  {
     text_list: Array<string>;

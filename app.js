@@ -48,7 +48,7 @@ var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-6
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
 var secretKeyBase58 = "Your Secret Key"; //paste your transaction
-var secretKey = bs58_1.default.decode(secretKeyBase58);
+var secretKey = bs58_1.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
 var sizeLimitForSplitCompression = 10000;
@@ -283,7 +283,7 @@ function getChunk(textData, chunkSize) {
 }
 function makeTextTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var beforeHash, method, decode_break, _i, chunkList_1, text;
+        var beforeHash, method, decode_break, _i, chunkList_1, text, tx_1, tx;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -293,24 +293,30 @@ function makeTextTransactions(chunkList, handle, type, offset) {
                     _i = 0, chunkList_1 = chunkList;
                     _a.label = 1;
                 case 1:
-                    if (!(_i < chunkList_1.length)) return [3 /*break*/, 4];
+                    if (!(_i < chunkList_1.length)) return [3 /*break*/, 5];
                     text = chunkList_1[_i];
                     return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 2:
-                    beforeHash = _a.sent();
-                    _a.label = 3;
+                    tx_1 = _a.sent();
+                    return [4 /*yield*/, txSend(tx_1)];
                 case 3:
+                    beforeHash = _a.sent();
+                    _a.label = 4;
+                case 4:
                     _i++;
                     return [3 /*break*/, 1];
-                case 4: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
-                case 5: return [2 /*return*/, _a.sent()];
+                case 5: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
+                case 6:
+                    tx = _a.sent();
+                    return [4 /*yield*/, txSend(tx)];
+                case 7: return [2 /*return*/, _a.sent()];
             }
         });
     });
 }
 function makeAsciiTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx_1, tx_2, tx;
+        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx_2, tx_3, tx;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -335,15 +341,15 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                     if (!(i < textList.length)) return [3 /*break*/, 5];
                     return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 3:
-                    tx_1 = _b.sent();
-                    return [4 /*yield*/, txSend(tx_1)];
+                    tx_2 = _b.sent();
+                    return [4 /*yield*/, txSend(tx_2)];
                 case 4:
                     beforeHash = _b.sent();
                     return [3 /*break*/, 8];
                 case 5: return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 6:
-                    tx_2 = _b.sent();
-                    return [4 /*yield*/, txSend(tx_2)];
+                    tx_3 = _b.sent();
+                    return [4 /*yield*/, txSend(tx_3)];
                 case 7:
                     beforeHash = _b.sent();
                     _b.label = 8;
