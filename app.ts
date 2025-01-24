@@ -13,7 +13,7 @@ const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a
 const iqHost = "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const secretKeyBase58 = ""; //paste your secret key
+const secretKeyBase58 = "paste your secret key"; //paste your secret key
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
 const transactionSizeLimit = 850;
@@ -244,7 +244,7 @@ async function makeAsciiTransactions(chunkList: Array<chunkObj>, handle: string,
             }
             i += 1;
             if (beforeHash === "error") {
-                alert("error on transaction");
+                console.log("error on transaction");
                 return false;
             }
 
@@ -322,22 +322,14 @@ async function OnChainCodeIn(asciiArt: AsciiArt) {
     }
 
 }
+async function onChainTextIn(data:string, handle: string) {
+    const chunkList = await getChunk(data, transactionSizeLimit);
+    const merkleRoot = await makeMerkleRootFromServer(chunkList);
+    //you can adjust your type for binary data.. etc but you need to change your site's function.
+    console.log("Chunk size: ", chunkList.length + 1);
+    return await makeTextTransactions(chunkList, handle, "text", merkleRoot);
+}
 
-//--------------------------Example Code--------------------------------
-
-// async function run() {
-//     const image = await imgToAsciiArt("./images/700.png");
-//
-//     const asciiArt:AsciiArt ={
-//         result: image.result,
-//         width: image.width
-//     }
-//
-//     const result = await OnChainCodeIn(asciiArt)
-//     console.log("Db Trx",result);
-// }
-//
-// run()
 
 async function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -490,6 +482,17 @@ async function processImagesInFolder(folderPath: string) {
     }
 }
 
-const data =   dataValidation("./images");
 
-//processImagesInFolder("./metadata")
+//--------------------------Example Code--------------------------------
+
+async function run() {
+  const text = "sifting through the noise to find the signal is an art form, a dance with data that requires patience and precision\n" +
+      "\n" +
+      "sometimes the truth is hidden in plain sight, waiting for someone to connect the dots with the right tools and an open mind"
+    const handle = "binary";
+    const result = await onChainTextIn(text,handle)
+    console.log("Db Trx",result);
+}
+
+run()
+

@@ -49,8 +49,8 @@ var idl = require("../idl.json"); // Make sure this is the correct path to your 
 var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var secretKeyBase58 = ""; //paste your secret key
-var secretKey = bs58_1.default.decode(secretKeyBase58);
+var secretKeyBase58 = "paste your secret key"; //paste your secret key
+var secretKey = bs58_1.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
 var sizeLimitForSplitCompression = 10000;
@@ -59,7 +59,7 @@ var app = express();
 app.use(express.json());
 function getPDA(userKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data_1, error_1;
+        var response, data, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -69,12 +69,12 @@ function getPDA(userKey) {
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
                 case 2:
-                    data_1 = _a.sent();
+                    data = _a.sent();
                     if (response.ok) {
-                        return [2 /*return*/, data_1.PDA];
+                        return [2 /*return*/, data.PDA];
                     }
                     else {
-                        throw new Error(data_1.error || 'Failed to fetch PDA');
+                        throw new Error(data.error || 'Failed to fetch PDA');
                     }
                     return [3 /*break*/, 4];
                 case 3:
@@ -88,7 +88,7 @@ function getPDA(userKey) {
 }
 function getDBPDA(userKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data_2, error_2;
+        var response, data, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -98,12 +98,12 @@ function getDBPDA(userKey) {
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
                 case 2:
-                    data_2 = _a.sent();
+                    data = _a.sent();
                     if (response.ok) {
-                        return [2 /*return*/, data_2.DBPDA];
+                        return [2 /*return*/, data.DBPDA];
                     }
                     else {
-                        throw new Error(data_2.error || 'Failed to fetch PDA');
+                        throw new Error(data.error || 'Failed to fetch PDA');
                     }
                     return [3 /*break*/, 4];
                 case 3:
@@ -156,7 +156,7 @@ function makeMerkleRootFromServer(dataList) {
 }
 function getTransactionInfoOnServer(txId) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data_3, error_4, error_5;
+        var response, data, error_4, error_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -170,8 +170,8 @@ function getTransactionInfoOnServer(txId) {
                     _a.trys.push([2, 4, , 5]);
                     return [4 /*yield*/, response.json()];
                 case 3:
-                    data_3 = _a.sent();
-                    return [2 /*return*/, data_3.argData];
+                    data = _a.sent();
+                    return [2 /*return*/, data.argData];
                 case 4:
                     error_4 = _a.sent();
                     console.error('Error creating transaction:', error_4);
@@ -430,7 +430,7 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                 case 8:
                     i += 1;
                     if (beforeHash === "error") {
-                        alert("error on transaction");
+                        console.log("error on transaction");
                         return [2 /*return*/, false];
                     }
                     _b.label = 9;
@@ -547,20 +547,25 @@ function OnChainCodeIn(asciiArt) {
         });
     });
 }
-//--------------------------Example Code--------------------------------
-// async function run() {
-//     const image = await imgToAsciiArt("./images/700.png");
-//
-//     const asciiArt:AsciiArt ={
-//         result: image.result,
-//         width: image.width
-//     }
-//
-//     const result = await OnChainCodeIn(asciiArt)
-//     console.log("Db Trx",result);
-// }
-//
-// run()
+function onChainTextIn(data, handle) {
+    return __awaiter(this, void 0, void 0, function () {
+        var chunkList, merkleRoot;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getChunk(data, transactionSizeLimit)];
+                case 1:
+                    chunkList = _a.sent();
+                    return [4 /*yield*/, makeMerkleRootFromServer(chunkList)];
+                case 2:
+                    merkleRoot = _a.sent();
+                    //you can adjust your type for binary data.. etc but you need to change your site's function.
+                    console.log("Chunk size: ", chunkList.length + 1);
+                    return [4 /*yield*/, makeTextTransactions(chunkList, handle, "text", merkleRoot)];
+                case 3: return [2 /*return*/, _a.sent()];
+            }
+        });
+    });
+}
 function sleep(ms) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -751,5 +756,24 @@ function processImagesInFolder(folderPath) {
         });
     });
 }
-var data = dataValidation("./images");
-//processImagesInFolder("./metadata")
+//--------------------------Example Code--------------------------------
+function run() {
+    return __awaiter(this, void 0, void 0, function () {
+        var text, handle, result;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    text = "sifting through the noise to find the signal is an art form, a dance with data that requires patience and precision\n" +
+                        "\n" +
+                        "sometimes the truth is hidden in plain sight, waiting for someone to connect the dots with the right tools and an open mind";
+                    handle = "binary";
+                    return [4 /*yield*/, onChainTextIn(text, handle)];
+                case 1:
+                    result = _a.sent();
+                    console.log("Db Trx", result);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+run();
