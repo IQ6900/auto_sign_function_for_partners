@@ -40,6 +40,8 @@ var web3_js_1 = require("@solana/web3.js");
 var bs58_1 = require("bs58");
 var ascii_genetate_1 = require("./ascii_genetate");
 var compress_1 = require("./compress");
+var fs = require("fs");
+var path = require("path");
 var anchor = require('@coral-xyz/anchor');
 var express = require('express');
 var cors = require('cors');
@@ -47,8 +49,8 @@ var idl = require("../idl.json"); // Make sure this is the correct path to your 
 var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var secretKeyBase58 = "Your Secret Key"; //paste your transaction
-var secretKey = bs58_1.decode(secretKeyBase58);
+var secretKeyBase58 = ""; //paste your secret key
+var secretKey = bs58_1.default.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
 var sizeLimitForSplitCompression = 10000;
@@ -57,7 +59,7 @@ var app = express();
 app.use(express.json());
 function getPDA(userKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, error_1;
+        var response, data_1, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -67,12 +69,12 @@ function getPDA(userKey) {
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
                 case 2:
-                    data = _a.sent();
+                    data_1 = _a.sent();
                     if (response.ok) {
-                        return [2 /*return*/, data.PDA];
+                        return [2 /*return*/, data_1.PDA];
                     }
                     else {
-                        throw new Error(data.error || 'Failed to fetch PDA');
+                        throw new Error(data_1.error || 'Failed to fetch PDA');
                     }
                     return [3 /*break*/, 4];
                 case 3:
@@ -86,7 +88,7 @@ function getPDA(userKey) {
 }
 function getDBPDA(userKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, error_2;
+        var response, data_2, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -96,12 +98,12 @@ function getDBPDA(userKey) {
                     response = _a.sent();
                     return [4 /*yield*/, response.json()];
                 case 2:
-                    data = _a.sent();
+                    data_2 = _a.sent();
                     if (response.ok) {
-                        return [2 /*return*/, data.DBPDA];
+                        return [2 /*return*/, data_2.DBPDA];
                     }
                     else {
-                        throw new Error(data.error || 'Failed to fetch PDA');
+                        throw new Error(data_2.error || 'Failed to fetch PDA');
                     }
                     return [3 /*break*/, 4];
                 case 3:
@@ -113,7 +115,7 @@ function getDBPDA(userKey) {
         });
     });
 }
-function getMerkleRootFromServer(dataList) {
+function makeMerkleRootFromServer(dataList) {
     return __awaiter(this, void 0, void 0, function () {
         var url, requestData, response, responseData, error_3;
         return __generator(this, function (_a) {
@@ -152,31 +154,103 @@ function getMerkleRootFromServer(dataList) {
         });
     });
 }
+function getTransactionInfoOnServer(txId) {
+    return __awaiter(this, void 0, void 0, function () {
+        var response, data_3, error_4, error_5;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 6, , 7]);
+                    return [4 /*yield*/, fetch(iqHost + "/get_transaction_info/".concat(txId))];
+                case 1:
+                    response = _a.sent();
+                    if (!response.ok) return [3 /*break*/, 5];
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 4, , 5]);
+                    return [4 /*yield*/, response.json()];
+                case 3:
+                    data_3 = _a.sent();
+                    return [2 /*return*/, data_3.argData];
+                case 4:
+                    error_4 = _a.sent();
+                    console.error('Error creating transaction:', error_4);
+                    return [2 /*return*/, null];
+                case 5: return [3 /*break*/, 7];
+                case 6:
+                    error_5 = _a.sent();
+                    console.error('Error creating initTransactionOnServer:', error_5);
+                    return [2 /*return*/, null];
+                case 7: return [2 /*return*/];
+            }
+        });
+    });
+}
+;
+function bringOffset(dataTxid) {
+    return __awaiter(this, void 0, void 0, function () {
+        var txInfo, type_field;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getTransactionInfoOnServer(dataTxid)];
+                case 1:
+                    txInfo = _a.sent();
+                    if (txInfo == undefined) {
+                        return [2 /*return*/, false];
+                    }
+                    type_field = txInfo.type_field;
+                    if (type_field === "image") {
+                        return [2 /*return*/, txInfo.offset];
+                    }
+                    else {
+                        return [2 /*return*/, false];
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
 function txSend(tx) {
     return __awaiter(this, void 0, void 0, function () {
-        var connection, blockhash, txid;
+        var connection, blockHash, txid;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     connection = new web3_js_1.Connection(network, 'confirmed');
                     return [4 /*yield*/, connection.getLatestBlockhash()];
                 case 1:
-                    blockhash = (_a.sent()).blockhash;
-                    tx.recentBlockhash = blockhash;
+                    blockHash = _a.sent();
+                    _a.label = 2;
+                case 2:
+                    if (!(blockHash == undefined)) return [3 /*break*/, 4];
+                    connection = new web3_js_1.Connection(network, 'confirmed');
+                    return [4 /*yield*/, connection.getLatestBlockhash()];
+                case 3:
+                    blockHash = _a.sent();
+                    return [3 /*break*/, 2];
+                case 4:
+                    tx.recentBlockhash = blockHash.blockhash;
+                    tx.lastValidBlockHeight = blockHash.lastValidBlockHeight;
                     tx.feePayer = keypair.publicKey;
                     tx.sign(keypair);
                     return [4 /*yield*/, web3.sendAndConfirmTransaction(connection, tx, [keypair])];
-                case 2:
+                case 5:
                     txid = _a.sent();
-                    console.log('Transaction sent, txid:', txid);
-                    return [2 /*return*/, txid];
+                    if (txid == undefined) {
+                        return [2 /*return*/, "null"];
+                    }
+                    else {
+                        console.log('Transaction sent, txid:', txid);
+                        return [2 /*return*/, txid];
+                    }
+                    return [2 /*return*/];
             }
         });
     });
 }
 function createSendTransaction(code, before_tx, method, decode_break) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, PDA, program, tx, ix, error_4;
+        var userKey, PDA, program, tx, ix, error_6;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -203,9 +277,9 @@ function createSendTransaction(code, before_tx, method, decode_break) {
                     _a.sent();
                     return [2 /*return*/, tx];
                 case 4:
-                    error_4 = _a.sent();
-                    console.error(error_4);
-                    throw new Error("Failed to create instruction: " + error_4);
+                    error_6 = _a.sent();
+                    console.error(error_6);
+                    throw new Error("Failed to create instruction: " + error_6);
                 case 5: return [2 /*return*/];
             }
         });
@@ -213,7 +287,7 @@ function createSendTransaction(code, before_tx, method, decode_break) {
 }
 function createDbCodeTransaction(handle, tail_tx, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, DBPDA, program, tx, dbcodefreeix, error_5;
+        var userKey, DBPDA, program, tx, dbcodefreeix, error_7;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -240,8 +314,8 @@ function createDbCodeTransaction(handle, tail_tx, type, offset) {
                     _a.sent();
                     return [2 /*return*/, tx];
                 case 4:
-                    error_5 = _a.sent();
-                    throw new Error("Failed to create instruction: " + error_5);
+                    error_7 = _a.sent();
+                    throw new Error("Failed to create instruction: " + error_7);
                 case 5: return [2 /*return*/];
             }
         });
@@ -316,7 +390,7 @@ function makeTextTransactions(chunkList, handle, type, offset) {
 }
 function makeAsciiTransactions(chunkList, handle, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx_2, tx_3, tx;
+        var beforeHash, _i, chunkList_2, chunks, textList, method, decode_break, i, _a, textList_1, text, tx, tx, last_tx, resultHash;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -341,15 +415,15 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                     if (!(i < textList.length)) return [3 /*break*/, 5];
                     return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 3:
-                    tx_2 = _b.sent();
-                    return [4 /*yield*/, txSend(tx_2)];
+                    tx = _b.sent();
+                    return [4 /*yield*/, txSend(tx)];
                 case 4:
                     beforeHash = _b.sent();
                     return [3 /*break*/, 8];
                 case 5: return [4 /*yield*/, createSendTransaction(text, beforeHash, method, decode_break)];
                 case 6:
-                    tx_3 = _b.sent();
-                    return [4 /*yield*/, txSend(tx_3)];
+                    tx = _b.sent();
+                    return [4 /*yield*/, txSend(tx)];
                 case 7:
                     beforeHash = _b.sent();
                     _b.label = 8;
@@ -368,9 +442,18 @@ function makeAsciiTransactions(chunkList, handle, type, offset) {
                     return [3 /*break*/, 1];
                 case 11: return [4 /*yield*/, createDbCodeTransaction(handle, beforeHash, type, offset)];
                 case 12:
-                    tx = _b.sent();
-                    return [4 /*yield*/, txSend(tx)];
-                case 13: return [2 /*return*/, _b.sent()];
+                    last_tx = _b.sent();
+                    return [4 /*yield*/, txSend(last_tx)];
+                case 13:
+                    resultHash = _b.sent();
+                    if (resultHash === "error") {
+                        alert("error on transaction");
+                        return [2 /*return*/, false];
+                    }
+                    else {
+                        return [2 /*return*/, resultHash];
+                    }
+                    return [2 /*return*/];
             }
         });
     });
@@ -390,7 +473,7 @@ function _makeAsciiChunks(asciiArt, width) {
                     return [4 /*yield*/, getChunk(full_msg, sizeLimitForSplitCompression)];
                 case 1:
                     textChunks = _b.sent();
-                    return [4 /*yield*/, getMerkleRootFromServer(textChunks)];
+                    return [4 /*yield*/, makeMerkleRootFromServer(textChunks)];
                 case 2:
                     merkleRoot = _b.sent();
                     _i = 0, textChunks_1 = textChunks;
@@ -438,7 +521,7 @@ function _makeAsciiChunks(asciiArt, width) {
 }
 function OnChainCodeIn(asciiArt) {
     return __awaiter(this, void 0, void 0, function () {
-        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, error_6;
+        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, error_8;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -456,34 +539,217 @@ function OnChainCodeIn(asciiArt) {
                     return [4 /*yield*/, makeAsciiTransactions(chunkList, handle, dataType, offset)];
                 case 2: return [2 /*return*/, _a.sent()];
                 case 3:
-                    error_6 = _a.sent();
-                    console.error("Error signing or sending transaction: ", error_6);
+                    error_8 = _a.sent();
+                    console.error("Error signing or sending transaction: ", error_8);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
         });
     });
 }
-// //--------------------------Example Code--------------------------------
-function run() {
+//--------------------------Example Code--------------------------------
+// async function run() {
+//     const image = await imgToAsciiArt("./images/700.png");
+//
+//     const asciiArt:AsciiArt ={
+//         result: image.result,
+//         width: image.width
+//     }
+//
+//     const result = await OnChainCodeIn(asciiArt)
+//     console.log("Db Trx",result);
+// }
+//
+// run()
+function sleep(ms) {
     return __awaiter(this, void 0, void 0, function () {
-        var image, asciiArt, result;
+        return __generator(this, function (_a) {
+            return [2 /*return*/, new Promise(function (resolve) { return setTimeout(resolve, ms); })];
+        });
+    });
+}
+function naturalSort(files) {
+    return files.sort(function (a, b) {
+        var aMatch = a.match(/\d+/);
+        var bMatch = b.match(/\d+/);
+        var aNum = aMatch ? parseInt(aMatch[0], 10) : 0;
+        var bNum = bMatch ? parseInt(bMatch[0], 10) : 0;
+        return aNum - bNum || a.localeCompare(b);
+    });
+}
+function fetchDataSignatures(address_1) {
+    return __awaiter(this, arguments, void 0, function (address, max) {
+        var DBPDA, connection, signaturesInfo, signatures, error_9;
+        if (max === void 0) { max = 475; }
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, ascii_genetate_1.default)("./images/700.png")];
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    DBPDA = new web3_js_1.PublicKey(address);
+                    connection = new web3_js_1.Connection(network, 'confirmed');
+                    return [4 /*yield*/, connection.getSignaturesForAddress(DBPDA, {
+                            limit: max,
+                        })];
                 case 1:
-                    image = _a.sent();
-                    asciiArt = {
-                        result: image.result,
-                        width: image.width
-                    };
-                    return [4 /*yield*/, OnChainCodeIn(asciiArt)];
+                    signaturesInfo = _a.sent();
+                    signatures = signaturesInfo.map(function (info) { return info.signature; });
+                    return [2 /*return*/, signatures];
                 case 2:
-                    result = _a.sent();
-                    console.log("Db Trx", result);
-                    return [2 /*return*/];
+                    error_9 = _a.sent();
+                    console.error("Error fetching signatures:", error_9);
+                    return [2 /*return*/, []];
+                case 3: return [2 /*return*/];
             }
         });
     });
 }
-run();
+function dataValidation(folderPath) {
+    return __awaiter(this, void 0, void 0, function () {
+        var notFind, files, sortedFiles, totalFiles, successCount, userKey, DBPDA, onChainDbPdaData, signatures, signatureIndex, i, file, filePath, image, asciiArt, innerOffset, full_msg, textChunks, merkleRoot, onChainMerkleRoot, error_10;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 10, , 11]);
+                    notFind = [];
+                    files = fs.readdirSync(folderPath);
+                    sortedFiles = naturalSort(files);
+                    totalFiles = sortedFiles.length;
+                    successCount = 0;
+                    userKey = keypair.publicKey;
+                    return [4 /*yield*/, getDBPDA(userKey.toString())];
+                case 1:
+                    DBPDA = _a.sent();
+                    return [4 /*yield*/, fetchDataSignatures(DBPDA)];
+                case 2:
+                    onChainDbPdaData = _a.sent();
+                    signatures = onChainDbPdaData.reverse().slice(1);
+                    signatureIndex = 0;
+                    i = 0;
+                    _a.label = 3;
+                case 3:
+                    if (!(i < totalFiles)) return [3 /*break*/, 9];
+                    file = sortedFiles[i];
+                    filePath = path.join(folderPath, file);
+                    if (!fs.statSync(filePath).isFile()) {
+                        console.log("Skipping non-file: ".concat(file));
+                        return [3 /*break*/, 8];
+                    }
+                    console.log("Processing ".concat(i + 1, "/").concat(totalFiles, ": ").concat(file));
+                    return [4 /*yield*/, (0, ascii_genetate_1.default)(filePath)];
+                case 4:
+                    image = _a.sent();
+                    asciiArt = {
+                        result: image.result,
+                        width: image.width,
+                    };
+                    innerOffset = "[ width: " + asciiArt.width.toString() + " ]";
+                    full_msg = innerOffset + asciiArt.result;
+                    return [4 /*yield*/, getChunk(full_msg, sizeLimitForSplitCompression)];
+                case 5:
+                    textChunks = _a.sent();
+                    return [4 /*yield*/, makeMerkleRootFromServer(textChunks)];
+                case 6:
+                    merkleRoot = _a.sent();
+                    return [4 /*yield*/, bringOffset(signatures[successCount])];
+                case 7:
+                    onChainMerkleRoot = _a.sent();
+                    //we save merkle root in offset, bring on-chain merkle root here
+                    console.log("merkleRoot:" + merkleRoot + "," + "onChainMerkleRoot: " + onChainMerkleRoot);
+                    if (merkleRoot == onChainMerkleRoot) {
+                        console.log("Data is Same. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
+                        successCount++;
+                    }
+                    else {
+                        console.log("not found", filePath); //333.png is missed lets see
+                        notFind.push(filePath);
+                    }
+                    _a.label = 8;
+                case 8:
+                    i++;
+                    return [3 /*break*/, 3];
+                case 9:
+                    if (notFind.length > 0) {
+                        console.log("this file not found: ".concat(notFind));
+                    }
+                    else {
+                        console.log("Every data is saved");
+                    }
+                    return [3 /*break*/, 11];
+                case 10:
+                    error_10 = _a.sent();
+                    console.error("Error validation:", error_10);
+                    return [3 /*break*/, 11];
+                case 11: return [2 /*return*/];
+            }
+        });
+    });
+}
+function processImagesInFolder(folderPath) {
+    return __awaiter(this, void 0, void 0, function () {
+        var files, sortedFiles, totalFiles, successCount, i, file, filePath, image, asciiArt, result, error_11, error_12;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 10, , 11]);
+                    files = fs.readdirSync(folderPath);
+                    sortedFiles = naturalSort(files);
+                    totalFiles = sortedFiles.length;
+                    successCount = 0;
+                    i = 0;
+                    _a.label = 1;
+                case 1:
+                    if (!(i < totalFiles)) return [3 /*break*/, 9];
+                    file = sortedFiles[i];
+                    filePath = path.join(folderPath, file);
+                    if (!fs.statSync(filePath).isFile()) {
+                        console.log("Skipping non-file: ".concat(file));
+                        return [3 /*break*/, 8];
+                    }
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 5, , 6]);
+                    console.log("Processing ".concat(i + 1, "/").concat(totalFiles, ": ").concat(file));
+                    return [4 /*yield*/, (0, ascii_genetate_1.default)(filePath)];
+                case 3:
+                    image = _a.sent();
+                    asciiArt = {
+                        result: image.result,
+                        width: image.width,
+                    };
+                    return [4 /*yield*/, OnChainCodeIn(asciiArt)];
+                case 4:
+                    result = _a.sent();
+                    if (result == false) {
+                        console.log("false on trx");
+                        return [2 /*return*/, false];
+                    }
+                    console.log("Processed ".concat(file, " - DB Trx Result:"), result);
+                    successCount++;
+                    return [3 /*break*/, 6];
+                case 5:
+                    error_11 = _a.sent();
+                    console.error("Error processing ".concat(file, ":"), error_11);
+                    return [2 /*return*/, false];
+                case 6:
+                    console.log("".concat(i + 1, "/").concat(totalFiles, " completed - ").concat(successCount, " success"));
+                    return [4 /*yield*/, sleep(3000)];
+                case 7:
+                    _a.sent(); // 3초 대기
+                    _a.label = 8;
+                case 8:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 9:
+                    console.log("Processing complete. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
+                    return [3 /*break*/, 11];
+                case 10:
+                    error_12 = _a.sent();
+                    console.error("Error reading folder:", error_12);
+                    return [3 /*break*/, 11];
+                case 11: return [2 /*return*/];
+            }
+        });
+    });
+}
+var data = dataValidation("./images");
+//processImagesInFolder("./metadata")

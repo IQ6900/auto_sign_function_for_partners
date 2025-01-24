@@ -1,17 +1,19 @@
-import {Connection, Keypair, SystemProgram, Transaction} from "@solana/web3.js";
+import {Connection, Keypair, PublicKey, SystemProgram, Transaction} from "@solana/web3.js";
 import bs58 from 'bs58';
 import imgToAsciiArt from "./ascii_genetate"
 import {compressText} from "./compress"
+import * as fs from "fs";
+import * as path from "path";
 
 const anchor = require('@coral-xyz/anchor');
 const express = require('express');
 const cors = require('cors');
 const idl = require("../idl.json");  // Make sure this is the correct path to your IDL file
 const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09"
-const iqHost =  "https://solanacontractapi.uc.r.appspot.com";
+const iqHost = "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const secretKeyBase58 = "Your Secret Key"; //paste your transaction
+const secretKeyBase58 = ""; //paste your secret key
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
 const transactionSizeLimit = 850;
@@ -54,7 +56,7 @@ async function getDBPDA(userKey: string): Promise<string> {
     }
 }
 
-async function getMerkleRootFromServer(dataList: Array<string>) {
+async function makeMerkleRootFromServer(dataList: Array<string>) {
     const url = iqHost + "/generate-merkle-root"; // 서버 URL
     const requestData = {
         data: dataList, // 데이터 배열
@@ -82,17 +84,56 @@ async function getMerkleRootFromServer(dataList: Array<string>) {
     }
 }
 
+async function getTransactionInfoOnServer(txId: string) {
+    try {
+        const response = await fetch(iqHost + `/get_transaction_info/${txId}`);
+        if (response.ok) {
+            try {
+                const data = await response.json();
+                return data.argData;
+            } catch (error) {
+                console.error('Error creating transaction:', error);
+                return null;
+            }
+        }
+    } catch (error) {
+        console.error('Error creating initTransactionOnServer:', error);
+        return null;
+    }
+};
+
+async function bringOffset(dataTxid: string) {
+    const txInfo = await getTransactionInfoOnServer(dataTxid);
+    if (txInfo == undefined) {
+        return false;
+    }
+    const type_field = txInfo.type_field;
+    if (type_field === "image") {
+        return txInfo.offset;
+    } else {
+        return false;
+    }
+}
+
 async function txSend(tx: Transaction): Promise<string> {
-    const connection = new Connection(network, 'confirmed');
-    const {blockhash} = await connection.getLatestBlockhash();
-    tx.recentBlockhash = blockhash;
+    let connection = new Connection(network, 'confirmed');
+    let blockHash = await connection.getLatestBlockhash();
+    while (blockHash == undefined) {
+        connection = new Connection(network, 'confirmed');
+        blockHash = await connection.getLatestBlockhash();
+    }
+    tx.recentBlockhash = blockHash.blockhash;
+    tx.lastValidBlockHeight = blockHash.lastValidBlockHeight;
     tx.feePayer = keypair.publicKey;
     tx.sign(keypair);
+
     const txid = await web3.sendAndConfirmTransaction(connection, tx, [keypair]);
-
-    console.log('Transaction sent, txid:', txid);
-    return txid;
-
+    if (txid == undefined) {
+        return "null";
+    } else {
+        console.log('Transaction sent, txid:', txid);
+        return txid;
+    }
 }
 
 async function createSendTransaction(code: string, before_tx: string, method: number, decode_break: number) {
@@ -143,7 +184,7 @@ async function createDbCodeTransaction(handle: string, tail_tx: string, type: st
     }
 }
 
-async function getChunk(textData: string , chunkSize:number): Promise<string[]> {
+async function getChunk(textData: string, chunkSize: number): Promise<string[]> {
     const datalength = textData.length;
     const totalChunks = Math.ceil(datalength / chunkSize);
     let chunks = [];
@@ -172,11 +213,13 @@ async function makeTextTransactions(chunkList: Array<string>, handle: string, ty
     const tx = await createDbCodeTransaction(handle, beforeHash, type, offset);
     return await txSend(tx);
 }
-interface chunkObj  {
+
+interface chunkObj {
     text_list: Array<string>;
     method: number;
 }
-async function makeAsciiTransactions( chunkList: Array<chunkObj>, handle: string, type: string, offset: string) {
+
+async function makeAsciiTransactions(chunkList: Array<chunkObj>, handle: string, type: string, offset: string) {
     let beforeHash = "Genesis";
 
     for (let chunks of chunkList) {
@@ -207,23 +250,30 @@ async function makeAsciiTransactions( chunkList: Array<chunkObj>, handle: string
 
         }
     }
-     const tx =await createDbCodeTransaction(handle, beforeHash, type, offset);
-    return await txSend(tx);
+    const last_tx = await createDbCodeTransaction(handle, beforeHash, type, offset);
+    const resultHash = await txSend(last_tx);
+    if (resultHash === "error") {
+        alert("error on transaction");
+        return false;
+    } else {
+        return resultHash;
+    }
 }
 
 
-async function _makeAsciiChunks(asciiArt:string,width:number) {
+async function _makeAsciiChunks(asciiArt: string, width: number) {
     let textChunks = []
     let compressedChunks = []
     let totalChunks = []
     let chunkSize = 0;
-    let innerOffset = "[ width: "+width.toString()+" ]"
-    let full_msg= innerOffset+asciiArt;
+    let innerOffset = "[ width: " + width.toString() + " ]"
+    let full_msg = innerOffset + asciiArt;
 
 
     textChunks = await getChunk(full_msg, sizeLimitForSplitCompression);
 
-    const merkleRoot = await getMerkleRootFromServer(textChunks);
+    const merkleRoot = await makeMerkleRootFromServer(textChunks);
+
     for (let textChunk of textChunks) {
         let _compressChunk = await compressText(textChunk);
         compressedChunks.push(_compressChunk);
@@ -249,13 +299,13 @@ interface AsciiArt {
     width: number;
 }
 
-async function OnChainCodeIn(asciiArt:AsciiArt) {
+async function OnChainCodeIn(asciiArt: AsciiArt) {
 
     try {
 
         const handle = "anonymous"; // edit with twitter api
 
-        let chunkObj = await _makeAsciiChunks(asciiArt.result,asciiArt.width);
+        let chunkObj = await _makeAsciiChunks(asciiArt.result, asciiArt.width);
         const chunkList = chunkObj.chunkList;
         const chunkSize = chunkObj.chunkSize;
         const merkleRoot = chunkObj.merkleRoot;
@@ -273,18 +323,173 @@ async function OnChainCodeIn(asciiArt:AsciiArt) {
 
 }
 
-// //--------------------------Example Code--------------------------------
-async function run() {
-    const image = await imgToAsciiArt("./images/700.png");
+//--------------------------Example Code--------------------------------
 
-    const asciiArt:AsciiArt ={
-        result: image.result,
-        width: image.width
-    }
+// async function run() {
+//     const image = await imgToAsciiArt("./images/700.png");
+//
+//     const asciiArt:AsciiArt ={
+//         result: image.result,
+//         width: image.width
+//     }
+//
+//     const result = await OnChainCodeIn(asciiArt)
+//     console.log("Db Trx",result);
+// }
+//
+// run()
 
-    const result = await OnChainCodeIn(asciiArt)
-    console.log("Db Trx",result);
+async function sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-run()
+function naturalSort(files: string[]): string[] {
+    return files.sort((a, b) => {
+        const aMatch = a.match(/\d+/);
+        const bMatch = b.match(/\d+/);
 
+        const aNum = aMatch ? parseInt(aMatch[0], 10) : 0;
+        const bNum = bMatch ? parseInt(bMatch[0], 10) : 0;
+
+        return aNum - bNum || a.localeCompare(b);
+    });
+}
+
+async function fetchDataSignatures(address: string, max = 475) {
+
+    try {
+        const DBPDA = new PublicKey(address);
+
+        const connection = new Connection(network, 'confirmed');
+
+        const signaturesInfo = await connection.getSignaturesForAddress(DBPDA, {
+            limit: max,
+        });
+        const signatures = signaturesInfo.map(info => info.signature);
+
+        return signatures;
+
+    } catch (error) {
+        console.error("Error fetching signatures:", error);
+        return [];
+    }
+}
+
+async function dataValidation(folderPath: string) {
+    try {
+        let notFind = []
+        const files = fs.readdirSync(folderPath); // 폴더의 파일 목록 읽기
+        const sortedFiles = naturalSort(files); // 파일명 자연 정렬
+        const totalFiles = sortedFiles.length;
+        let successCount = 0;
+        const userKey = keypair.publicKey;
+        const DBPDA = await getDBPDA(userKey.toString());
+
+        const onChainDbPdaData = await fetchDataSignatures(DBPDA);
+
+        const signatures = onChainDbPdaData.reverse().slice(1);
+        // fs.writeFile('output.txt', signatures.join('\n'), (err) => {
+        //     if (err) {
+        //         console.error('Error writing file:', err);
+        //     } else {
+        //         console.log('File saved as output.txt');
+        //     }
+        // });
+
+        let signatureIndex = 0
+        for (let i = 0; i < totalFiles; i++) {
+            const file = sortedFiles[i];
+            const filePath = path.join(folderPath, file);
+
+            if (!fs.statSync(filePath).isFile()) {
+                console.log(`Skipping non-file: ${file}`);
+                continue;
+            }
+            console.log(`Processing ${i + 1}/${totalFiles}: ${file}`);
+
+            const image = await imgToAsciiArt(filePath);
+            const asciiArt: AsciiArt = {
+                result: image.result,
+                width: image.width,
+            };
+
+            let innerOffset = "[ width: " + asciiArt.width.toString() + " ]"
+            let full_msg = innerOffset + asciiArt.result;
+            const textChunks = await getChunk(full_msg, sizeLimitForSplitCompression);
+
+            const merkleRoot = await makeMerkleRootFromServer(textChunks); // make merkle root with image
+            let onChainMerkleRoot = await bringOffset(signatures[successCount]);
+            //we save merkle root in offset, bring on-chain merkle root here
+
+            console.log("merkleRoot:" + merkleRoot + "," + "onChainMerkleRoot: " + onChainMerkleRoot)
+
+            if (merkleRoot == onChainMerkleRoot) {
+                console.log(`Data is Same. ${successCount}/${totalFiles} files processed successfully.`);
+            successCount++;
+            } else {
+                console.log(`not found`, filePath); //333.png is missed lets see
+                notFind.push(filePath);
+            }
+        }
+        if(notFind.length > 0) {
+            console.log(`this file not found: ${notFind}`);
+        }else{
+            console.log(`Every data is saved`);
+        }
+
+    } catch (error) {
+        console.error("Error validation:", error);
+    }
+
+}
+
+async function processImagesInFolder(folderPath: string) {
+    try {
+        const files = fs.readdirSync(folderPath); // 폴더의 파일 목록 읽기
+        const sortedFiles = naturalSort(files); // 파일명 자연 정렬
+        const totalFiles = sortedFiles.length;
+        let successCount = 0;
+
+        for (let i = 0; i < totalFiles; i++) {
+            const file = sortedFiles[i];
+            const filePath = path.join(folderPath, file);
+
+            if (!fs.statSync(filePath).isFile()) {
+                console.log(`Skipping non-file: ${file}`);
+                continue;
+            }
+
+            try {
+                console.log(`Processing ${i + 1}/${totalFiles}: ${file}`);
+                const image = await imgToAsciiArt(filePath);
+
+                const asciiArt: AsciiArt = {
+                    result: image.result,
+                    width: image.width,
+                };
+
+                const result = await OnChainCodeIn(asciiArt);
+                if (result == false) {
+                    console.log("false on trx");
+                    return false;
+                }
+                console.log(`Processed ${file} - DB Trx Result:`, result);
+                successCount++;
+            } catch (error) {
+                console.error(`Error processing ${file}:`, error);
+                return false;
+            }
+
+            console.log(`${i + 1}/${totalFiles} completed - ${successCount} success`);
+            await sleep(3000); // 3초 대기
+        }
+
+        console.log(`Processing complete. ${successCount}/${totalFiles} files processed successfully.`);
+    } catch (error) {
+        console.error("Error reading folder:", error);
+    }
+}
+
+const data =   dataValidation("./images");
+
+//processImagesInFolder("./metadata")

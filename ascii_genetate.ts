@@ -6,7 +6,7 @@ async function loadImage(filePath: string) {
     return sharp(filePath);
 }
 
-async function imgToAsciiArt(imageSrc: string, fontSize = 7, outputHeight = 700) {
+async function imgToAsciiArt(imageSrc: string, fontSize = 5, outputHeight = 700) {
     try {
 
         const image = await loadImage(imageSrc);

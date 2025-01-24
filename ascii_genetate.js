@@ -49,7 +49,7 @@ function loadImage(filePath) {
 function imgToAsciiArt(imageSrc_1) {
     return __awaiter(this, arguments, void 0, function (imageSrc, fontSize, outputHeight) {
         var image, metadata, aspectRatio, outputWidth, resizedImage, _a, data, info, result, y, line, x, index, _b, r, g, b, a, char, brightness, result_string, error_1;
-        if (fontSize === void 0) { fontSize = 7; }
+        if (fontSize === void 0) { fontSize = 5; }
         if (outputHeight === void 0) { outputHeight = 700; }
         return __generator(this, function (_c) {
             switch (_c.label) {
