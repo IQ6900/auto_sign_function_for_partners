@@ -1,0 +1,23 @@
+{
+	"image": "NuKK8U2BrwvydXQC7hat4VoZQUGiXwPPYYwdnrosDYS5AKwusz1ppwFYHcaHU8QJKtB9B9Mz8tn172kdw9wGjDm",
+	"tokenId": 88,
+	"name": "Trump Coded-In #88",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

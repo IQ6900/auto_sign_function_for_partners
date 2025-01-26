@@ -13,7 +13,7 @@ const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a
 const iqHost = "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const secretKeyBase58 = "paste your secret key"; //paste your secret key
+const secretKeyBase58 = "jj"; //paste your secret key
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
 const transactionSizeLimit = 850;
@@ -108,7 +108,7 @@ async function bringOffset(dataTxid: string) {
         return false;
     }
     const type_field = txInfo.type_field;
-    if (type_field === "image") {
+    if (type_field === "image"|| type_field === "text") {
         return txInfo.offset;
     } else {
         return false;
@@ -366,12 +366,65 @@ async function fetchDataSignatures(address: string, max = 475) {
         return [];
     }
 }
+async function dataValidationForText(folderPath: string) {
+    let notFind = [];
+    const files = fs.readdirSync(folderPath); // 폴더의 파일 목록 읽기
+    const sortedFiles = naturalSort(files); // 파일명 자연 정렬
+    const totalFiles = sortedFiles.length;
+    let successCount = 0;
+    const userKey = keypair.publicKey;
+    const DBPDA = await getDBPDA(userKey.toString());
+    let onChainMerkleRoot = ""
+    const onChainDbPdaData = await fetchDataSignatures(DBPDA);
+
+    const signatures = onChainDbPdaData.reverse().slice(1);
+
+    for (let i = 0; i < totalFiles; i++) {
+        const file = sortedFiles[i];
+        const filePath = path.join(folderPath, file);
+
+        if (!fs.statSync(filePath).isFile()) {
+            console.log(`Skipping non-file: ${file}`);
+            continue;
+        }
+        const data = fs.readFileSync(filePath, 'utf8'); // 'utf8'로 인코딩 설정
+        if (data != null) {
+            console.log(`Processing ${i + 1}/${totalFiles}: ${file}`);
+
+            const chunkList = await getChunk(data, transactionSizeLimit);
+            const merkleRoot = await makeMerkleRootFromServer(chunkList);
+
+
+             onChainMerkleRoot = await bringOffset(signatures[successCount]);
+            //we save merkle root in offset, bring on-chain merkle root here
+
+            console.log("merkleRoot:" + merkleRoot + "," + "onChainMerkleRoot: " + onChainMerkleRoot)
+
+            if (merkleRoot == onChainMerkleRoot) {
+                console.log(`Data is Same. ${successCount}/${totalFiles} files processed successfully.`);
+                successCount++;
+            } else {
+                console.log(`not found`, filePath); //333.png is missed lets see
+                notFind.push(filePath);
+            }
+        }else{
+            console.log(`not found from local`, filePath);
+            notFind.push(filePath);
+        }
+    }
+    if(notFind.length > 0) {
+        console.log(`this file not found: ${notFind}`);
+    }else{
+        console.log(`Every data is saved`);
+    }
+
+}
 
 async function dataValidation(folderPath: string) {
     try {
         let notFind = []
-        const files = fs.readdirSync(folderPath); // 폴더의 파일 목록 읽기
-        const sortedFiles = naturalSort(files); // 파일명 자연 정렬
+        const files = fs.readdirSync(folderPath);
+        const sortedFiles = naturalSort(files);
         const totalFiles = sortedFiles.length;
         let successCount = 0;
         const userKey = keypair.publicKey;
@@ -380,13 +433,7 @@ async function dataValidation(folderPath: string) {
         const onChainDbPdaData = await fetchDataSignatures(DBPDA);
 
         const signatures = onChainDbPdaData.reverse().slice(1);
-        // fs.writeFile('output.txt', signatures.join('\n'), (err) => {
-        //     if (err) {
-        //         console.error('Error writing file:', err);
-        //     } else {
-        //         console.log('File saved as output.txt');
-        //     }
-        // });
+
 
         let signatureIndex = 0
         for (let i = 0; i < totalFiles; i++) {
@@ -482,17 +529,62 @@ async function processImagesInFolder(folderPath: string) {
     }
 }
 
+async function processMetaDataInFolder(folderPath: string) {
+    try {
+        const files = fs.readdirSync(folderPath);
+        const sortedFiles = naturalSort(files);
+        const totalFiles = sortedFiles.length;
+        let successCount = 0;
+
+        for (let i = 0; i < totalFiles; i++) {
+            const file = sortedFiles[i];
+            const filePath = path.join(folderPath, file);
+
+            if (!fs.statSync(filePath).isFile()) {
+                console.log(`Skipping non-file: ${file}`);
+                continue;
+            }
+            try {
+                const data = fs.readFileSync(filePath, 'utf8'); // 'utf8'로 인코딩 설정
+                if (data != null) {
+                    console.log(`Processing ${i + 1}/${totalFiles}: ${file}`);
+
+                    const result = await onChainTextIn(data,"IQ6900");
+
+                    if (result == "null") {
+                        console.log("false on trx");
+                        return false;
+                    }
+                    console.log(`Processed ${file} - DB Trx Result:`, result);
+                    successCount++;
+                }else{
+                    console.log("No Data");
+                    return false;
+                }
+            } catch (error) {
+                console.error(`Error processing ${file}:`, error);
+                return false;
+            }
+
+            console.log(`${i + 1}/${totalFiles} completed - ${successCount} success`);
+            await sleep(3000); // 3초 대기
+        }
+
+        console.log(`Processing complete. ${successCount}/${totalFiles} files processed successfully.`);
+        return true;
+    } catch (error) {
+        console.error("Error reading folder:", error);
+    }
+}
+
 
 //--------------------------Example Code--------------------------------
 
 async function run() {
-  const text = "sifting through the noise to find the signal is an art form, a dance with data that requires patience and precision\n" +
-      "\n" +
-      "sometimes the truth is hidden in plain sight, waiting for someone to connect the dots with the right tools and an open mind"
-    const handle = "binary";
-    const result = await onChainTextIn(text,handle)
-    console.log("Db Trx",result);
+    const DBPDA = await getDBPDA("72FRpJJHNQWvXvHKHLked6w1ycJagxw5P1VFzjQcw5hN");
+    const onChainDbPdaData = await fetchDataSignatures(DBPDA);
+    const signatures = onChainDbPdaData.reverse().slice(1);
+    console.log("signatures",signatures);
 }
-
 run()
 

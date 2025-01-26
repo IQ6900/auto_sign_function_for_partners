@@ -1,0 +1,23 @@
+{
+	"image": "4hpEtKee6wVVf68Gm7hWRdJNm4JuVoaNM6ugrx7e8r7E4GCirTeTyqVrAxPRkWKsXQRGbDjTw7n8VBuWXt5zxPRP",
+	"tokenId": 255,
+	"name": "Trump Coded-In #255",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

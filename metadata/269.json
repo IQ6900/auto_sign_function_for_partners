@@ -1,0 +1,23 @@
+{
+	"image": "2SJgBqNG2dPf6Yw4jfMXiW7KUhBRZb1Rys16jQwrYbbUQN948aH68KRGLmTwokcboEuvLXhWfGEfZFJ2jGESBRau",
+	"tokenId": 269,
+	"name": "Trump Coded-In #269",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

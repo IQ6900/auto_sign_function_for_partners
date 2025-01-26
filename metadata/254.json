@@ -1,0 +1,23 @@
+{
+	"image": "4KeRUgwyTUYFjD9VKNV8PvGkrhEk8bDREhrgkL5UB5WNr7HKXsF82wkgsL1s3CvgvCpbxd5CC3GYx5hZ2stBnzR5",
+	"tokenId": 254,
+	"name": "Trump Coded-In #254",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

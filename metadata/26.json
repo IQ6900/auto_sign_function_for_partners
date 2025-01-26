@@ -1,0 +1,23 @@
+{
+	"image": "2FQHQeEfbTGTV1yR5UE6jJGzE5NGWsxuMi6f8KbttJsqDZKjZfhR8YYidgpmpW84cW2Ueq4xLxTayN4EeHYdPTyY",
+	"tokenId": 26,
+	"name": "Trump Coded-In #26",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

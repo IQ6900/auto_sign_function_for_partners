@@ -1,0 +1,23 @@
+{
+	"image": "3XtDRAHqEBTthZKUmdSMQkcg2gEBEJZdvspfJGjiCtNaJys2ZeBjezPmWmSfPNPG3obuaBsHNfit2gchVWZA75WY",
+	"tokenId": 464,
+	"name": "Trump Coded-In #464",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

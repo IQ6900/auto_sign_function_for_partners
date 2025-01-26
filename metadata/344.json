@@ -1,0 +1,23 @@
+{
+	"image": "53EeTW2h6Cd6fE8TsjAsbVFoEQ6oYqAzAbFLiu8oSPZxJJ6hSjcYj7nz2uxPbuET9eA5azXb59UGWwfUJ4eXxvk1",
+	"tokenId": 344,
+	"name": "Trump Coded-In #344",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

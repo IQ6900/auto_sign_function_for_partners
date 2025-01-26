@@ -1,0 +1,23 @@
+{
+	"image": "3s3CFg3gZsxS5CHVGpMs37UR3Zj8uSwHAqqpNBeLjnJQG5dAWmaNoju6fUFcYxK1UH6FjJaYir8uivQWwB3n2dKg",
+	"tokenId": 355,
+	"name": "Trump Coded-In #355",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

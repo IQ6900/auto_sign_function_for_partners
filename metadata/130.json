@@ -1,0 +1,23 @@
+{
+	"image": "4NWa2d4g1m9sqd2ck6goNd7btEaqaCCEooF7aTBR9R17RmpkSi6XXfjp2uaCzgro6R2hx3htok4avngTyadEqkT6",
+	"tokenId": 130,
+	"name": "Trump Coded-In #130",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

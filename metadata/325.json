@@ -1,0 +1,23 @@
+{
+	"image": "3wpzQmKfvMRBTDWjMo1eQhqQw6aLfyhAPTSTpLtqTmgbcUqaBSfdioM8bk4LCBsbgSeyPv1SWR7pQu68o3U7nWPx",
+	"tokenId": 325,
+	"name": "Trump Coded-In #325",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

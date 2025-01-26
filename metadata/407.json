@@ -1,0 +1,23 @@
+{
+	"image": "42aTjtiwLiitqPCUUHnw4f52fHFP1XE4vS5ridnNzXHLFT6pZw8qaUPPnB25H8CDuy7KwawHoiVx6NuvihW1W1T4",
+	"tokenId": 407,
+	"name": "Trump Coded-In #407",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "3Jdib1bwsRghA7NiVeKvtyZx1c5hyUqkeRaVLBQv12Vc1Rqr9sSJU3ENkDhgomwfp8GmSBG2nd4F9EENbbfeCAoM",
+	"tokenId": 136,
+	"name": "Trump Coded-In #136",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

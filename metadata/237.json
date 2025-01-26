@@ -1,0 +1,23 @@
+{
+	"image": "3DokfaK8XpmrVzrcNZxj7CNPByifL2jq7Ax1aXrAev1uCsPESN9Sg14LaSJNYd3VMGnCZHBwVAgnECPXxLpUyEzx",
+	"tokenId": 237,
+	"name": "Trump Coded-In #237",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

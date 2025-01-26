@@ -1,0 +1,23 @@
+{
+	"image": "5wHE9rBJX5m1J3cZGMgriYEPZE8MCXiCz6brszfcayTvAVRn8SVeSdepHJ58oGaFpYMRTxFBcj7TVzu5khzmxRFC",
+	"tokenId": 56,
+	"name": "Trump Coded-In #56",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

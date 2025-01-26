@@ -1,0 +1,23 @@
+{
+	"image": "3WgNrWLWeUV8hp46cCntTB8dNZVb3Qh4AQzdTVd9zDYXgUTyHd4ABPTzjD6epUJWyH5JWDg1HgdgN5i4V2eqDodc",
+	"tokenId": 182,
+	"name": "Trump Coded-In #182",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

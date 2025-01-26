@@ -1,0 +1,23 @@
+{
+	"image": "2178F6JT1Yijknx7n7dEub64DedCnvSYvB4KLqKM34kHTDATntHkDNCoppJFod3PnmbUHnE64AXce7EdRXHRQN7T",
+	"tokenId": 240,
+	"name": "Trump Coded-In #240",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

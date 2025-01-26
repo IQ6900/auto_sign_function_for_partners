@@ -1,0 +1,23 @@
+{
+	"image": "2v7oisi81ZFUUa6EaCzP9PEhT4zQbWdxPPXMYE6FdyQ46HEQCLq1izp7vEkTBWn1rDkFddxtpCLBJAM8xXJBha9U",
+	"tokenId": 129,
+	"name": "Trump Coded-In #129",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

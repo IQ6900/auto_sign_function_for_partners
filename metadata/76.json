@@ -1,0 +1,23 @@
+{
+	"image": "32srou9PbFQG7jMo3sY2RBgyHjqFwbnzjLUWZRhp1JtXLRwqZzH8CH8MfhUcjjXJ4XX2byiisa5pbMSufUWhXAjx",
+	"tokenId": 76,
+	"name": "Trump Coded-In #76",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "5KX5iVMzYDVvb6AFZKKRvT8yAc4F459G8HBaWb3pqdy79BCtdZsz3VU1BU95tUtC2o4ZK9YCJaZSxvFHbVozVqjP",
+	"tokenId": 92,
+	"name": "Trump Coded-In #92",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

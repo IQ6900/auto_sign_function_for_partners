@@ -1,0 +1,23 @@
+{
+	"image": "4ocSByJyR52x24gXkg8GNuW6TUD4g7JsojjQUgG4vtBSKBug9pYKEgnxcktcKhAZ2J7nuwyB2GUzVXW4ZJjmz28e",
+	"tokenId": 101,
+	"name": "Trump Coded-In #101",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

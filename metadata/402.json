@@ -1,0 +1,23 @@
+{
+	"image": "385rBGxNYi5vu5cQcFeh5CR7R7y4BrJMSDxg1m125Wri3BPVHRZcJgMugpaE88DhraAMh1cuMsxQW38jCTtwUx4a",
+	"tokenId": 402,
+	"name": "Trump Coded-In #402",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

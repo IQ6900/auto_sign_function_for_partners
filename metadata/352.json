@@ -1,0 +1,23 @@
+{
+	"image": "4jBfT5NkW92UFqtFNazf1SUtSuU9tduW8psU3Z4NA9HqQeAtp7o6KKkuMf2aj485MHaSHeBQvRK3zuP2g1MhGhRX",
+	"tokenId": 352,
+	"name": "Trump Coded-In #352",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

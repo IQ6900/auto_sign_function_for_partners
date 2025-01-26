@@ -1,0 +1,23 @@
+{
+	"image": "3ub8LG35JXf5wGus3y4FwA9phaW5zMcZi4ZMvxUFNChMy9ThSHfCikdfcTUe178ERGydT9Bsdg7iaWz4xxY8RWPZ",
+	"tokenId": 280,
+	"name": "Trump Coded-In #280",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

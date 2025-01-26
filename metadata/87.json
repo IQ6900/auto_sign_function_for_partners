@@ -1,0 +1,23 @@
+{
+	"image": "2hWvi23TTyjKjr5FCn7wpAYD5ER5zPhgkWTtDvVAESYQFUoJif7mf3BqtmZXwVBwD3oe7AwvpRV7PnUsgLRqhbSG",
+	"tokenId": 87,
+	"name": "Trump Coded-In #87",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

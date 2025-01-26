@@ -1,0 +1,23 @@
+{
+	"image": "36qhpWCp3wQLN9hDpJQoupwowWDRDdqmrA7YRjSZMKHLMcFQZPRL6spE5HCpYvrpTDhn9pnzyGK4ZKjeB2jP1X9X",
+	"tokenId": 256,
+	"name": "Trump Coded-In #256",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

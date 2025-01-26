@@ -1,0 +1,23 @@
+{
+	"image": "22PLbd3e2fCxGRB65Zvj6xciBu6B5W9kPGjNf5GqLE2LxgLqPTcroMYuGo4i9Z4emTfc6HnzD4Rd8xTQ4m5i3eur",
+	"tokenId": 69,
+	"name": "Trump Coded-In #69",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

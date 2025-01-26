@@ -1,0 +1,23 @@
+{
+	"image": "jL338BQw9GF932Pt1cf6qBq2gUnEhecoSN8MD1ZSku3epchTYDYSJDdbxq2983yNz1QaYW3jYEMzLbWEzGhrBne",
+	"tokenId": 305,
+	"name": "Trump Coded-In #305",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

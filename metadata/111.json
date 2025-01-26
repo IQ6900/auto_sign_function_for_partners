@@ -1,0 +1,23 @@
+{
+	"image": "FnFW1ZKwa9xzgsqGWTVhWGotzha5qLUxL5j6JZhqSHmjmkN3as8tER3yffX4mVWjiaFtKbgH4ufLbbzmM953Qhn",
+	"tokenId": 111,
+	"name": "Trump Coded-In #111",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

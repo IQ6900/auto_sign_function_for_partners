@@ -1,0 +1,23 @@
+{
+	"image": "5jxmUSVXnjm4ykJm4cH9kMsRX2fgZF6Mxkf12BVBUKfJ4sKHLQa3PdYeTieq8QVbpB8dv3DYv2Kiknh1x6sWWFD3",
+	"tokenId": 83,
+	"name": "Trump Coded-In #83",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

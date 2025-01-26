@@ -1,0 +1,23 @@
+{
+	"image": "VHGxKomDQz2dhji9t9LnLntZazu5xwniBaKhLWgmPyGJCBeg1ivwM9E5bSTrNkixBypGH2D6eKhAwSpuureFJ7p",
+	"tokenId": 456,
+	"name": "Trump Coded-In #456",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

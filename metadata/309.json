@@ -1,0 +1,23 @@
+{
+	"image": "JNoWYDcFZaeP2SFjVDiaj5aW1NogNrr44BvU2ffBPjkE3Pb4fYcpU7PqQQVParZWnVRYJqgh6cwkQQT3pvSMc7k",
+	"tokenId": 309,
+	"name": "Trump Coded-In #309",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

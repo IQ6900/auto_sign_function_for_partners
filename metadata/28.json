@@ -1,0 +1,23 @@
+{
+	"image": "4pdNAYdVrgboNX9Cxd7ZicjvqDhWNPw5EFGxeQdhddvJUHXGYa4P99fD1T8xqquyGRA46kAH6BGYAhmojee5BCdV",
+	"tokenId": 28,
+	"name": "Trump Coded-In #28",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

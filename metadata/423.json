@@ -1,0 +1,23 @@
+{
+	"image": "5EAWfzsygqPHhgQXChdaopbkbdJ8HvX37eyUewKmzJv975YdCtt9ThwrhSYHcm7Ny3Qaoh9YfyPH4UFuydC9vHK7",
+	"tokenId": 423,
+	"name": "Trump Coded-In #423",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

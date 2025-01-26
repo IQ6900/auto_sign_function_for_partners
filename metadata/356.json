@@ -1,0 +1,23 @@
+{
+	"image": "XDS9n6PhtQhWSk9AXYi7UZdD4p4F38wfWAonGN1QML6NBju1QqQhdCwKqspBpaPRUzKZnXT7iMnhf7u1nZum18Q",
+	"tokenId": 356,
+	"name": "Trump Coded-In #356",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

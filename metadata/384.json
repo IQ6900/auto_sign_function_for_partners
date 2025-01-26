@@ -1,0 +1,23 @@
+{
+	"image": "5xa63aT4oJ2XHyCjTPvt6AyqNayVaHf7g7wyTyCuepYAfMHD5UyEDuUJVCYveGyqoKPFpm3AFYQk4vvtBzd2NaQG",
+	"tokenId": 384,
+	"name": "Trump Coded-In #384",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

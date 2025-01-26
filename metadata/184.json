@@ -1,0 +1,23 @@
+{
+	"image": "39nvz14U8Xwm2ynuFn4DPktpGN1jhNzsDeBBr6DUAMRZqZT7by9twKeRLZmbh3xZ4uC4G51qCmeq63UV7QmfSrf1",
+	"tokenId": 184,
+	"name": "Trump Coded-In #184",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

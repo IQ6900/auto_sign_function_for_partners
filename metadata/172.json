@@ -1,0 +1,23 @@
+{
+	"image": "35WJAsnaaqnUzbmQLrszkWr9RXNH5G1RXHogJzUPqSFSP5RRazHAkURrfVXQH3EBE2b4VLJRkUFZFPsFhpUSX3bh",
+	"tokenId": 172,
+	"name": "Trump Coded-In #172",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

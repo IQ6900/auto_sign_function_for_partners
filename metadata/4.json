@@ -1,0 +1,23 @@
+{
+	"image": "Yv1XhGJCjK2UizVefmNhsZ7YxYVm1bhFJXs99TKTHSN9X8cAHHTiCUAkjMFyG2KrDRZ9jGMbQNpLohwqUdsdjrD",
+	"tokenId": 4,
+	"name": "Trump Coded-In #4",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

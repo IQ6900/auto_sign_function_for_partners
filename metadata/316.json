@@ -1,0 +1,23 @@
+{
+	"image": "JrdXFYvbtd5ri3b9wwm5hTVqHcjr1vQwYdcSMBWKbLCbo18dbYsJv8pcDf7RM2XDBTUUDDsd1VqU5rk6TrTLAen",
+	"tokenId": 316,
+	"name": "Trump Coded-In #316",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

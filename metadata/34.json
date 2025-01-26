@@ -1,0 +1,23 @@
+{
+	"image": "5D4NAHv36gvnDnk8FPSCB9Wt3MpAg6mAToCK7gmEzerKPvGDuanjoezEtgQDyb7KUDhtAtoXP7oCqZUoo9jePxwA",
+	"tokenId": 34,
+	"name": "Trump Coded-In #34",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

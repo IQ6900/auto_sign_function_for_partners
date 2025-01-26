@@ -1,0 +1,23 @@
+{
+	"image": "CmxAVQRcJMcD99pawyvmotNaoRrAs8BqcGipAdASmnzBX29Eq7rg4Q3omvWdtsu9FFigcYfWGs3HhizcSsrcc3d",
+	"tokenId": 93,
+	"name": "Trump Coded-In #93",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "4P3LaarNd7GEhKkUaT7Lq3Mf9SzCiYCSEJKhcBpbL1vrGAQQALA8pJBet8c1KWAjaJCR8djcFjpJoGnpTxm81ops",
+	"tokenId": 81,
+	"name": "Trump Coded-In #81",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

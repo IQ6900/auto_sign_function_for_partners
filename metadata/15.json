@@ -1,0 +1,23 @@
+{
+	"image": "LGs6ECfUq1oKbNoE4kMEzvesjkHseoxaExjbLsus6T7sVBUBHGd4Sgsx35iTCuWTMof2ehRKNdRmDRVQM7Ns3Fs",
+	"tokenId": 15,
+	"name": "Trump Coded-In #15",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

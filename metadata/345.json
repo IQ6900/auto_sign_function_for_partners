@@ -1,0 +1,23 @@
+{
+	"image": "4DUFTYAuLQTxtQCxuW5TmQn6ntRc7fu8MNS3rVNo2znjkVV71H5P1xmsusNkHzrDSBbvp73XrrCPFmSZffJ8JbzZ",
+	"tokenId": 345,
+	"name": "Trump Coded-In #345",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "8P5DyCW8rFHtqLztuND6YSwMMQ5fqhiWLbxoeCQNRgnwjfMcjkPX9o5E75TzYTGhn7Fvm9vi5FeGFyi3CthyBbL",
+	"tokenId": 367,
+	"name": "Trump Coded-In #367",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

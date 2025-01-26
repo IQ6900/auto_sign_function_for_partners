@@ -1,0 +1,23 @@
+{
+	"image": "nHC4Ec3VCMcWtKHkBZdr96gCj6kGYWVfcunXncu4CZEyXFCg3LVrKbvcNHMMfxs3AuEFwXTiMtTKk5gcVkktAfV",
+	"tokenId": 59,
+	"name": "Trump Coded-In #59",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

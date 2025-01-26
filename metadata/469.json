@@ -1,0 +1,23 @@
+{
+	"image": "45yAYin34HwUxxAnVAFCCGQxZj3cYi5WSyuaZZoVxYAJngub9wU7fxt9mamfnNmBMzNkJd5PCDBB7NP3dKb6hD9v",
+	"tokenId": 469,
+	"name": "Trump Coded-In #469",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

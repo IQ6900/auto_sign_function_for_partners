@@ -1,0 +1,23 @@
+{
+	"image": "2N4fzF2fFxFxULCT5UqoLLxQmihfQkCGFewyqi7tAPbiFhfRMYfd4EDetQtT16itHPnz1xq7JUd1G2JVC5iXiNak",
+	"tokenId": 401,
+	"name": "Trump Coded-In #401",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

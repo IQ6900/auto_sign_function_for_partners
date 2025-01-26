@@ -1,0 +1,23 @@
+{
+	"image": "31idKarCPY5iLpuoLt3g36M9YNySkMjMqykvByGQPJ7Z1Eg54D171zPCtJ5zXER6Zx3AZn2dG4NUk3f9kAY7KR6p",
+	"tokenId": 433,
+	"name": "Trump Coded-In #433",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

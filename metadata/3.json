@@ -1,0 +1,23 @@
+{
+	"image": "5qVR5WztED9skzp9rqr2MqKDbP5w6rsFXafkdDxCESk8trhjEH5cjTqojGRsPkh24GWr6UgTwPD8V1i512Z9Kt2E",
+	"tokenId": 3,
+	"name": "Trump Coded-In #3",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

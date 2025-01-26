@@ -1,0 +1,23 @@
+{
+	"image": "3p2breuXss6zZTtrqg46qMPhJbYBC4BUmD6HSqnsqqthG1J74vbKLi6vCB1jei7SmcPFtFF8ABt1zjJiFFG5an7Q",
+	"tokenId": 236,
+	"name": "Trump Coded-In #236",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

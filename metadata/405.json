@@ -1,0 +1,23 @@
+{
+	"image": "ANKNhJNZJYQ341hD71Y5cyCHAT27zjtGQTeFSVhgcSUfmQ57UHWx3kX6eMxrCXLYLgTSez1okNp2qFytCuYqJG9",
+	"tokenId": 405,
+	"name": "Trump Coded-In #405",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

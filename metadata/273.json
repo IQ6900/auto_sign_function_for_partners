@@ -1,0 +1,23 @@
+{
+	"image": "56Pw7UT4dJdHyTx9wkwrGK8e9aFzBKi9KGrL4tAcSDhzkjocJDah3iNXF4r3TDNQnLoyG1zCTqYrofYpXxEdYgRd",
+	"tokenId": 273,
+	"name": "Trump Coded-In #273",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

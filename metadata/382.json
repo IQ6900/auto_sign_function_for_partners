@@ -1,0 +1,23 @@
+{
+	"image": "3NroTWuErzAM54vTN3KNJ2bQBw2meDs2B9ysJZ8MBXMxmYJyaRs1EL4qpV88XqPnDVEqhEbshDGsNMBcCUZDUzfs",
+	"tokenId": 382,
+	"name": "Trump Coded-In #382",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

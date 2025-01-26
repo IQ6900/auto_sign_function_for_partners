@@ -1,0 +1,23 @@
+{
+	"image": "4F9vvDDw4CPMppnZ4ke5xpbdRwGrZwuv6HnERQhNNcY2sGPntbVAjE45UjnVV5xKKdmCjpsokW6hcxqQcFPBzZYt",
+	"tokenId": 354,
+	"name": "Trump Coded-In #354",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

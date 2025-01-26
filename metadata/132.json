@@ -1,0 +1,23 @@
+{
+	"image": "4Y5ioYnmzuTgSrXzf7y1wQV7RTFeFniYNm9Ji9zrckTERcYdwEPoDXqyPfpLQpaGn1yzty75z8oNt3BLpDEMX839",
+	"tokenId": 132,
+	"name": "Trump Coded-In #132",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

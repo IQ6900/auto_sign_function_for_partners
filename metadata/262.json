@@ -1,0 +1,23 @@
+{
+	"image": "2U9rf95EQXwRhYm47T5v2rZV1Vo77uXzhaaKMB5cRNoZacek4rZZiVe1zaHuBHKKcVvgWVf222bgZrCQnrgHhvYj",
+	"tokenId": 262,
+	"name": "Trump Coded-In #262",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

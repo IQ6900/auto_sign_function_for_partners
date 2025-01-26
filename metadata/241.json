@@ -1,0 +1,23 @@
+{
+	"image": "3bPHZsDAEbqPeagMwTDRQRPdbZqE1ibB7kTHhwsurgLefjNJiDdB9PdboEkhQBVcMooGdCyzAs4K2U3v8mmViw6j",
+	"tokenId": 241,
+	"name": "Trump Coded-In #241",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

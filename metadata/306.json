@@ -1,0 +1,23 @@
+{
+	"image": "48Sz8Bt36Uouu5dfhD5DofoYyerBNnQ5NmeRyKFiGTHUH78Zzp9ephs5PaSfbu8WpTWQ8SSJQn9Kz6T8QcN9K9F6",
+	"tokenId": 306,
+	"name": "Trump Coded-In #306",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

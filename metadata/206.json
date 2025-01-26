@@ -1,0 +1,23 @@
+{
+	"image": "3hiJQuJ8P8L42UsbrUdFiNMKKmPsb8oxsL8PeAUzpMupq2AYQcP6HCJAtS1RWsZTR4vt2iKewXxbeerXUWvSSGeo",
+	"tokenId": 206,
+	"name": "Trump Coded-In #206",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

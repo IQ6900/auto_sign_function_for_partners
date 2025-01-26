@@ -1,0 +1,23 @@
+{
+	"image": "4L364mmXJVoVmnKHyTWk3JkKYin7vWN2KX595CBEw1GZE4Uto9vjnTaP9q8c2BazzdV45ZJnWAVtbT5DAKHrDDG7",
+	"tokenId": 117,
+	"name": "Trump Coded-In #117",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

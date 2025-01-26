@@ -1,0 +1,23 @@
+{
+	"image": "gjhqbzWPjUBVXFtSMHgvmN7htWS9wGdHAqNqifict5hs4C9YVK9s5kSDn9i8aeDYbaKByRoWpXAPt6SKHS9CTa9",
+	"tokenId": 12,
+	"name": "Trump Coded-In #12",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

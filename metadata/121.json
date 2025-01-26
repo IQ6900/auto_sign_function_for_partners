@@ -1,0 +1,23 @@
+{
+	"image": "recf3rjMFFogZLqU6Q9wgyBSbySmCBuxhzZHKFcjVdBfXf9YsT7QaSW6jBACp6TdyYob16NEgLLQ9jrcjpy6PKw",
+	"tokenId": 121,
+	"name": "Trump Coded-In #121",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

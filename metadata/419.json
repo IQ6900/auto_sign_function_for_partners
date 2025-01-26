@@ -1,0 +1,23 @@
+{
+	"image": "xUPFny5uyxxQpibXFmoRUpaym12p55eRfuv8uKx1t2TnwkonA8MZQtVtWyie8fZbeZ66z13bcgcaMfKePDhPTJM",
+	"tokenId": 419,
+	"name": "Trump Coded-In #419",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

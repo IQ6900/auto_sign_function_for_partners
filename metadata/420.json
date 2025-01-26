@@ -1,0 +1,23 @@
+{
+	"image": "3cpsAobv29FguKba4B16nB3EqABGpP743yGWB6BhQBCWnoYpQknBCZUwahkthGRMr4qVg3DtT7GAczmde6cEjRfC",
+	"tokenId": 420,
+	"name": "Trump Coded-In #420",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

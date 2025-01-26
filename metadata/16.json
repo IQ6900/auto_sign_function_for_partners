@@ -1,0 +1,23 @@
+{
+	"image": "4ZazLQsqb4ka72ViziPmDZZwBYKjcJND18Df41Vqy883t3MZtKjgk2XDRA8kzwwBLgbzEroEf3HvfvWnwb3d3M54",
+	"tokenId": 16,
+	"name": "Trump Coded-In #16",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

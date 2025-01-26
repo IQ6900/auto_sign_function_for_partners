@@ -1,0 +1,23 @@
+{
+	"image": "5gnAiHXaLRM2KiwRis6NGuNZizteLkj8u9Nmkuv1TigSWVwwcpAogxYyE4Yy2b6WsJzA8MLLCjVKBiEmcQjQj1su",
+	"tokenId": 147,
+	"name": "Trump Coded-In #147",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "2Ad3yi1PgY9PkGmp9J7M7dixQN41yc1xderir37CKRSKwHZ86j8PxR17C8ofDRrnUUP5dsvPx1cWcTRhZ5iQ4P2j",
+	"tokenId": 213,
+	"name": "Trump Coded-In #213",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

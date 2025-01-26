@@ -1,0 +1,23 @@
+{
+	"image": "3nTNS28nx2YdV2UedNG5rhZu1z8rhdfXZy6qGYbi1X9CuTN3EYQEr4naej7wXN2hk6eXid8o28rG9e5kyjfb9gDt",
+	"tokenId": 6,
+	"name": "Trump Coded-In #6",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

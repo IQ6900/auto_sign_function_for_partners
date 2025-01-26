@@ -1,0 +1,23 @@
+{
+	"image": "3i1qqfL5iQnujN4KYX44coGDD8MGPSFng4QXNhnuLDj7m979LnEEPE8gvJEeCi1Z7iKQETmvzhaywLifohhUmArU",
+	"tokenId": 300,
+	"name": "Trump Coded-In #300",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

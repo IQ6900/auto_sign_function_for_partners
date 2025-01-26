@@ -1,0 +1,23 @@
+{
+	"image": "2i1wSHHbYQ3XGQWdrAb5YiB3kJg9WxxrGjc6YgLQR6w6N3Ejmmq2E3kayggedUYx6gfHZHXtr62sVcUPsVYimLt3",
+	"tokenId": 398,
+	"name": "Trump Coded-In #398",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

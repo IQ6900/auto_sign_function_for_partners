@@ -1,0 +1,23 @@
+{
+	"image": "4JzezvkNL4GKKmuxBDTiHHBd6SUEZASVmvtgKJHLBqUgbKf4mKEFugijBHGZKSN9ENwywkMp25uitMdjfKCivb4",
+	"tokenId": 74,
+	"name": "Trump Coded-In #74",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

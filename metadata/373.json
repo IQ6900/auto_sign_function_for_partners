@@ -1,0 +1,23 @@
+{
+	"image": "3FbKomAcj9sx5UrE7fs8hfUU82PHsdH3YhauFsfoLJP4UsszvKfsMBJdnnsjSzRiwVPxV4hWPzVFtUv2StiwfZUz",
+	"tokenId": 373,
+	"name": "Trump Coded-In #373",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

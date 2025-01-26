@@ -1,0 +1,23 @@
+{
+	"image": "2G76yYSUg1Xib7X928vb7HpHzNcLhQ9cbtEn4xgkcePxxExh9Pa3PKjhvJJ93rEd1kbKqAKpqDJ2fKZsS3HhKkaz",
+	"tokenId": 467,
+	"name": "Trump Coded-In #467",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

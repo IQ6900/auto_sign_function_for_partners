@@ -1,0 +1,23 @@
+{
+	"image": "2dv1DYKrCBALkQwsKDtU5gr9FLW39Nwrq7vUuYggzK2rxYxqiG37gmB596UJCUTCqnzsFaja1aMHvKP5bFuv5egG",
+	"tokenId": 163,
+	"name": "Trump Coded-In #163",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

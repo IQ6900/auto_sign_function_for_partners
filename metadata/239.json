@@ -1,0 +1,23 @@
+{
+	"image": "2hVjMkCcjCGWHcb1XgcLxv25q5CTJpoqGZMTUrMCWPqy6aVxU7rY8dZBPXL9H96dNo52attNVwQLHy9Bp5HiD9Xf",
+	"tokenId": 239,
+	"name": "Trump Coded-In #239",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

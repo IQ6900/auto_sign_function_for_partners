@@ -1,0 +1,23 @@
+{
+	"image": "4DhBwcYn4dR93CGgciSFYVu7pbNc8YdFrhrVrqZrwrRTT9h2aatZLuW6bFCo1i4nPsw5MUpGtngUQTgTvgUMsP8o",
+	"tokenId": 198,
+	"name": "Trump Coded-In #198",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

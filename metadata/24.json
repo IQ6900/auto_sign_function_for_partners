@@ -1,0 +1,23 @@
+{
+	"image": "2TZS7RWPzYn6xrkPLKzfs1k2GXdqeD1wiG5nJqJ8zTSaHBrUMNoue4UnBHxokJNJbEN6f7ysbdSVvTqLuXBU481j",
+	"tokenId": 24,
+	"name": "Trump Coded-In #24",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

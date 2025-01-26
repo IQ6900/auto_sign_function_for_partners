@@ -1,0 +1,23 @@
+{
+	"image": "31CJ56ArJk32T8FM9BigvZMKod1WNyb2GvVPBuDaWobarmApM17MA2Y2bXPcUPvhEPPn16dzEALP6d4UAeBj5Vu9",
+	"tokenId": 10,
+	"name": "Trump Coded-In #10",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

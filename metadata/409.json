@@ -1,0 +1,23 @@
+{
+	"image": "43LwqXp2uNuxUujp3VrnXCsk6PvAK2MEj96J3uP7qG51Gx2aNqXm68h67qiGJrVFGoij2xqvHyfVy7YeFsM4vHUn",
+	"tokenId": 409,
+	"name": "Trump Coded-In #409",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

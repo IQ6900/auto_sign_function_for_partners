@@ -1,0 +1,23 @@
+{
+	"image": "2HM3BoAnxdNisD6T2j9p97gsymyEdaKrjpGYwJAdjyxhhmmYKj3JScJt9ErvGrRKdjJkKCHivW2ebn4c4tacyGcn",
+	"tokenId": 299,
+	"name": "Trump Coded-In #299",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

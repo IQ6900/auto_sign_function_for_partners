@@ -1,0 +1,23 @@
+{
+	"image": "5ZvcTJfkusf1P72CCzgKKsKfx4a7NAdipszLg1WBKiXACwW8w6yUTQAUXPqsU9HF4cuYR4wuPMqcY41VYxuWp3NH",
+	"tokenId": 276,
+	"name": "Trump Coded-In #276",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

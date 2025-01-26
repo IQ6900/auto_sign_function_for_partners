@@ -1,0 +1,23 @@
+{
+	"image": "128pxVNZ4dxfQZ84dxWW9At1qEemwWejVY4w1JbL1ySNfEfeivZetJMP7ZVUx6LRxjzLoHzz34YjNwQamYkMMYxv",
+	"tokenId": 29,
+	"name": "Trump Coded-In #29",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

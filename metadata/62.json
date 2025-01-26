@@ -1,0 +1,23 @@
+{
+	"image": "4XFCQ7uK7eqfFx21VAgoKEwyXRGxxXPkxt4emnPzzTqbRofKKktMKYVDAThJCWVHmFfhSyJCnFFjQS9iDAqeRShd",
+	"tokenId": 62,
+	"name": "Trump Coded-In #62",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

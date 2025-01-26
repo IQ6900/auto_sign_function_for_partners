@@ -1,0 +1,23 @@
+{
+	"image": "64eFTHihH7xrsrKnNEbfFN8GV9eEQ2Yk8AabsSQc2Yz3LNg272hXrxbP975LBPGcD2S9FWMA3i2dC5LiFqcAcPEF",
+	"tokenId": 411,
+	"name": "Trump Coded-In #411",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

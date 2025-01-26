@@ -1,0 +1,23 @@
+{
+	"image": "c24zcZUboTzBjgYUQr6hSoXcVMsjB7wAHVGAes3ME9EoNusHU5QFjMCCrZVrp8WLZNCtDUgDWSoSUgmfx8ENGjq",
+	"tokenId": 389,
+	"name": "Trump Coded-In #389",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

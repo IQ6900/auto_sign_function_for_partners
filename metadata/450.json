@@ -1,0 +1,23 @@
+{
+	"image": "32PEZtaGLKVDxbuXJzhgefhBJAWwMAYRHZ7ZnBNggVcZ2dJT4EfbM49thKMMS2SYvXomDjyvt97qkNNnvZynBJHV",
+	"tokenId": 450,
+	"name": "Trump Coded-In #450",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

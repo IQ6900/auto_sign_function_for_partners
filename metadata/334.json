@@ -1,0 +1,23 @@
+{
+	"image": "3oz1oKwnA4VyxC55UMpM9uh4yfWmh1ABCrmYYtvdPTtLrzXnwAfK4TrmvPRTWggtKN1YYXpCrUv6eVsfdAB4fVx2",
+	"tokenId": 334,
+	"name": "Trump Coded-In #334",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "5jBVSJSD8ja9Waty7A7cS3QTErB3m9kwkRJFekuLe8x9bUSe9ry5752CX6yUcrQ3tFQWUUMw1Atq3zdhvX3X1aKu",
+	"tokenId": 369,
+	"name": "Trump Coded-In #369",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "5LJmvG9pHPb18r2nm98Gv93wHisT5DjUWbiHTwXBKP3nrrNtxoSqYRnQq4zu4JNH78rqLzq5RRQpnNsBtq2LUKur",
+	"tokenId": 8,
+	"name": "Trump Coded-In #8",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "qzXGEkZgP2bwcXSadT2JuFe4hdn5tGT4QvyLYce3J3dtZvRXsXLgn1o2NrHjYfRhQBRvnEKHpZcBjVciQniQrRe",
+	"tokenId": 79,
+	"name": "Trump Coded-In #79",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

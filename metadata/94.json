@@ -1,0 +1,23 @@
+{
+	"image": "5ZMub6H7SLwG9nYAkG91jAJnu13hFENt5purjY4Sumc9f6SMTnif6X5LNLqdpZxWLB3xMi5iyrJkxNZcPEwNGY9u",
+	"tokenId": 94,
+	"name": "Trump Coded-In #94",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

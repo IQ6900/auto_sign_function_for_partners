@@ -1,0 +1,23 @@
+{
+	"image": "5WWu1Fh4HbEg9qAsRohxLa1m3YZnmL3RhKWcxvvjjF7G9bXhcy9y1LEKw29w81jLcm3M1qP6ApZFdHKNKu1Aw3bA",
+	"tokenId": 193,
+	"name": "Trump Coded-In #193",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

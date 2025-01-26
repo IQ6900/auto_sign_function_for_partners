@@ -1,0 +1,23 @@
+{
+	"image": "ckshVh9W5bqJ6ej8QmysyJxBqAk9FCMoW4SLHiWkXBUCRnTuynU4eFAW35frpF9ViygipG5xReYUJhuCiCLPSQ8",
+	"tokenId": 138,
+	"name": "Trump Coded-In #138",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

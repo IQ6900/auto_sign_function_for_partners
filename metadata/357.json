@@ -1,0 +1,23 @@
+{
+	"image": "5YQobzQdxNn6NRKQ7ypCEeDcwcwsoT6qkBg1EkScoSAzU6LRApLhDok97D5eqfrKHdqLxJobNnwgKxKoz5A4cEZp",
+	"tokenId": 357,
+	"name": "Trump Coded-In #357",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

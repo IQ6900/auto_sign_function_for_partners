@@ -1,0 +1,23 @@
+{
+	"image": "Lh7joNpeNoBy2Qp32d44PU5D6QZsCuPuG8jYxVfkUfwfUAWDHuGxbgrdJfpNoJbv3odaCgtcEBPGCas1spzzJZ9",
+	"tokenId": 311,
+	"name": "Trump Coded-In #311",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

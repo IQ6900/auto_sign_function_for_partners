@@ -1,0 +1,23 @@
+{
+	"image": "2jjVJStiBCbeZCADr6Gk8jLbbfCcE6YcCRGESzWAxgDQBJCJnAaL5E3PhZ3mbkpbhHciq4jzhPL785jQnuXGsbAs",
+	"tokenId": 442,
+	"name": "Trump Coded-In #442",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

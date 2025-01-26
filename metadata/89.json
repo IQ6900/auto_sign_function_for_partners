@@ -1,0 +1,23 @@
+{
+	"image": "2FtWapk6UgAKs2sC12BZNAofnDNxkccE2mN5sGwgM5fqMBctXX3gyy77PBgsp2dhV8dmj7N3DH8fQ1gT8iUvkLjt",
+	"tokenId": 89,
+	"name": "Trump Coded-In #89",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "hZDZ3orA4maZWFXF8KKxcmvSoUvPWb9LiNoTscGzqg55fiayYYeUeUk7r9k1ZK9V1WbBfQVkHtyUxc9t1KyeQWu",
+	"tokenId": 415,
+	"name": "Trump Coded-In #415",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

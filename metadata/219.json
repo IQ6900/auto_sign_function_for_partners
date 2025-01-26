@@ -1,0 +1,23 @@
+{
+	"image": "32mT6zUmGesropU7WrbXXRG3RvEKAMYzFmw2sJP5M9dWL8fvL3HPHfXEmBbu1NXuEifQyPhgCkFmBZzCA57dc4ah",
+	"tokenId": 219,
+	"name": "Trump Coded-In #219",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

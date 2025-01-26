@@ -1,0 +1,23 @@
+{
+	"image": "29HmdUPSe6HnSwA4yZq7ZxxRWsMn9AEjZk7kFcJWiNLkzx7Eqo6gP2rahyEFYaPKRUuhExqWjKirJKUhhC526Joe",
+	"tokenId": 90,
+	"name": "Trump Coded-In #90",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "56rG6k9grEDcmjKjGwNUC658NnATvHsfD6RYk4S5oEhvij8FSyzj6y8KseWdyVg7uJC5dak1adpHHzVS4xQ5zHE7",
+	"tokenId": 253,
+	"name": "Trump Coded-In #253",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "qxZrfnU7habrfBy9Ltw2aAVrrwBKHCPrQgjE5qeS8FvmrJe6xd4VyyTpEd4beKvDghCkL6apvDuxWFUguMkv1mN",
+	"tokenId": 418,
+	"name": "Trump Coded-In #418",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -49,8 +49,8 @@ var idl = require("../idl.json"); // Make sure this is the correct path to your 
 var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var secretKeyBase58 = "paste your secret key"; //paste your secret key
-var secretKey = bs58_1.decode(secretKeyBase58);
+var secretKeyBase58 = "jj"; //paste your secret key
+var secretKey = bs58_1.default.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
 var sizeLimitForSplitCompression = 10000;
@@ -199,7 +199,7 @@ function bringOffset(dataTxid) {
                         return [2 /*return*/, false];
                     }
                     type_field = txInfo.type_field;
-                    if (type_field === "image") {
+                    if (type_field === "image" || type_field === "text") {
                         return [2 /*return*/, txInfo.offset];
                     }
                     else {
@@ -608,6 +608,78 @@ function fetchDataSignatures(address_1) {
         });
     });
 }
+function dataValidationForText(folderPath) {
+    return __awaiter(this, void 0, void 0, function () {
+        var notFind, files, sortedFiles, totalFiles, successCount, userKey, DBPDA, onChainMerkleRoot, onChainDbPdaData, signatures, i, file, filePath, data, chunkList, merkleRoot;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    notFind = [];
+                    files = fs.readdirSync(folderPath);
+                    sortedFiles = naturalSort(files);
+                    totalFiles = sortedFiles.length;
+                    successCount = 0;
+                    userKey = keypair.publicKey;
+                    return [4 /*yield*/, getDBPDA(userKey.toString())];
+                case 1:
+                    DBPDA = _a.sent();
+                    onChainMerkleRoot = "";
+                    return [4 /*yield*/, fetchDataSignatures(DBPDA)];
+                case 2:
+                    onChainDbPdaData = _a.sent();
+                    signatures = onChainDbPdaData.reverse().slice(1);
+                    i = 0;
+                    _a.label = 3;
+                case 3:
+                    if (!(i < totalFiles)) return [3 /*break*/, 9];
+                    file = sortedFiles[i];
+                    filePath = path.join(folderPath, file);
+                    if (!fs.statSync(filePath).isFile()) {
+                        console.log("Skipping non-file: ".concat(file));
+                        return [3 /*break*/, 8];
+                    }
+                    data = fs.readFileSync(filePath, 'utf8');
+                    if (!(data != null)) return [3 /*break*/, 7];
+                    console.log("Processing ".concat(i + 1, "/").concat(totalFiles, ": ").concat(file));
+                    return [4 /*yield*/, getChunk(data, transactionSizeLimit)];
+                case 4:
+                    chunkList = _a.sent();
+                    return [4 /*yield*/, makeMerkleRootFromServer(chunkList)];
+                case 5:
+                    merkleRoot = _a.sent();
+                    return [4 /*yield*/, bringOffset(signatures[successCount])];
+                case 6:
+                    onChainMerkleRoot = _a.sent();
+                    //we save merkle root in offset, bring on-chain merkle root here
+                    console.log("merkleRoot:" + merkleRoot + "," + "onChainMerkleRoot: " + onChainMerkleRoot);
+                    if (merkleRoot == onChainMerkleRoot) {
+                        console.log("Data is Same. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
+                        successCount++;
+                    }
+                    else {
+                        console.log("not found", filePath); //333.png is missed lets see
+                        notFind.push(filePath);
+                    }
+                    return [3 /*break*/, 8];
+                case 7:
+                    console.log("not found from local", filePath);
+                    notFind.push(filePath);
+                    _a.label = 8;
+                case 8:
+                    i++;
+                    return [3 /*break*/, 3];
+                case 9:
+                    if (notFind.length > 0) {
+                        console.log("this file not found: ".concat(notFind));
+                    }
+                    else {
+                        console.log("Every data is saved");
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
 function dataValidation(folderPath) {
     return __awaiter(this, void 0, void 0, function () {
         var notFind, files, sortedFiles, totalFiles, successCount, userKey, DBPDA, onChainDbPdaData, signatures, signatureIndex, i, file, filePath, image, asciiArt, innerOffset, full_msg, textChunks, merkleRoot, onChainMerkleRoot, error_10;
@@ -756,21 +828,86 @@ function processImagesInFolder(folderPath) {
         });
     });
 }
-//--------------------------Example Code--------------------------------
-function run() {
+function processMetaDataInFolder(folderPath) {
     return __awaiter(this, void 0, void 0, function () {
-        var text, handle, result;
+        var files, sortedFiles, totalFiles, successCount, i, file, filePath, data, result, error_13, error_14;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    text = "sifting through the noise to find the signal is an art form, a dance with data that requires patience and precision\n" +
-                        "\n" +
-                        "sometimes the truth is hidden in plain sight, waiting for someone to connect the dots with the right tools and an open mind";
-                    handle = "binary";
-                    return [4 /*yield*/, onChainTextIn(text, handle)];
+                    _a.trys.push([0, 11, , 12]);
+                    files = fs.readdirSync(folderPath);
+                    sortedFiles = naturalSort(files);
+                    totalFiles = sortedFiles.length;
+                    successCount = 0;
+                    i = 0;
+                    _a.label = 1;
                 case 1:
+                    if (!(i < totalFiles)) return [3 /*break*/, 10];
+                    file = sortedFiles[i];
+                    filePath = path.join(folderPath, file);
+                    if (!fs.statSync(filePath).isFile()) {
+                        console.log("Skipping non-file: ".concat(file));
+                        return [3 /*break*/, 9];
+                    }
+                    _a.label = 2;
+                case 2:
+                    _a.trys.push([2, 6, , 7]);
+                    data = fs.readFileSync(filePath, 'utf8');
+                    if (!(data != null)) return [3 /*break*/, 4];
+                    console.log("Processing ".concat(i + 1, "/").concat(totalFiles, ": ").concat(file));
+                    return [4 /*yield*/, onChainTextIn(data, "IQ6900")];
+                case 3:
                     result = _a.sent();
-                    console.log("Db Trx", result);
+                    if (result == "null") {
+                        console.log("false on trx");
+                        return [2 /*return*/, false];
+                    }
+                    console.log("Processed ".concat(file, " - DB Trx Result:"), result);
+                    successCount++;
+                    return [3 /*break*/, 5];
+                case 4:
+                    console.log("No Data");
+                    return [2 /*return*/, false];
+                case 5: return [3 /*break*/, 7];
+                case 6:
+                    error_13 = _a.sent();
+                    console.error("Error processing ".concat(file, ":"), error_13);
+                    return [2 /*return*/, false];
+                case 7:
+                    console.log("".concat(i + 1, "/").concat(totalFiles, " completed - ").concat(successCount, " success"));
+                    return [4 /*yield*/, sleep(3000)];
+                case 8:
+                    _a.sent(); // 3초 대기
+                    _a.label = 9;
+                case 9:
+                    i++;
+                    return [3 /*break*/, 1];
+                case 10:
+                    console.log("Processing complete. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
+                    return [2 /*return*/, true];
+                case 11:
+                    error_14 = _a.sent();
+                    console.error("Error reading folder:", error_14);
+                    return [3 /*break*/, 12];
+                case 12: return [2 /*return*/];
+            }
+        });
+    });
+}
+//--------------------------Example Code--------------------------------
+function run() {
+    return __awaiter(this, void 0, void 0, function () {
+        var DBPDA, onChainDbPdaData, signatures;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, getDBPDA("72FRpJJHNQWvXvHKHLked6w1ycJagxw5P1VFzjQcw5hN")];
+                case 1:
+                    DBPDA = _a.sent();
+                    return [4 /*yield*/, fetchDataSignatures(DBPDA)];
+                case 2:
+                    onChainDbPdaData = _a.sent();
+                    signatures = onChainDbPdaData.reverse().slice(1);
+                    console.log("signatures", signatures);
                     return [2 /*return*/];
             }
         });

@@ -1,0 +1,23 @@
+{
+	"image": "BAcVUSGRwanBXSdbgbbaT6PiHJ2uTGiDJN55Uir7xx5aDAoGbjBbJhTk3dqoN3McDfxXLNMM8MpxPyFkho4uhuD",
+	"tokenId": 5,
+	"name": "Trump Coded-In #5",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

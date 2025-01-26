@@ -1,0 +1,23 @@
+{
+	"image": "5hft2gqoGKbewTCw7KiTS3njKkJhszadiXFcho9NpEQKDXyFHC9dVngnB4NCEL94dDEciFrcUong7Li7qV7gFpJu",
+	"tokenId": 23,
+	"name": "Trump Coded-In #23",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

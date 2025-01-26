@@ -1,0 +1,23 @@
+{
+	"image": "4QUdcVaXb8PFpjoQ77M5TGDis6wSRvqYYSaavRzjD4yLgyhtbprP8XobKiJhKXApTxDm5GCo4voQvw9ezcnQM8YP",
+	"tokenId": 9,
+	"name": "Trump Coded-In #9",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

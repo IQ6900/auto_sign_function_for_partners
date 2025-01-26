@@ -1,0 +1,23 @@
+{
+	"image": "4v7hD1kkJJqPfcdHJ5JxHyAn3y6RQf9oLPLmmiYqmF2YHqmNiqSTKvshaygGbmEfYma492u6Utc89vc6zUpTCsJg",
+	"tokenId": 31,
+	"name": "Trump Coded-In #31",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

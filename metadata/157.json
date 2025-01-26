@@ -1,0 +1,23 @@
+{
+	"image": "QxauF519hCYvu7MfFZSwW1GdS56KcsxTpafapmQUX1GsdJ58XkwSdrSMqzEPTYVQqFWEBpcjcXcNzzmzkk2LV9Y",
+	"tokenId": 157,
+	"name": "Trump Coded-In #157",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

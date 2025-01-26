@@ -1,0 +1,23 @@
+{
+	"image": "2vGFdrotJp2E6zsaJsMcx6uGGDgt4M7aP548ktaMAsC2RpvG7Uyj6ETHrRZpNebSb9FytuCQxk7tkzASpEwkrXJZ",
+	"tokenId": 365,
+	"name": "Trump Coded-In #365",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

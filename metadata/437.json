@@ -1,0 +1,23 @@
+{
+	"image": "4hHS49ozSxrHijz7Trdw5ZqPtaLzq6jG7ZDeHa8UrYkeBQZ9cHBpG8h1BXNQ2jdBCEYy7T2PYcE5eYSQ8eYa6EAp",
+	"tokenId": 437,
+	"name": "Trump Coded-In #437",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

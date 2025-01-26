@@ -1,0 +1,23 @@
+{
+	"image": "AqvQCWff1vcX8sqCmE7k5e6uqWoUtQeRzSfDLFYrrGD38pZk86bo3poPRbDbUXdDgdvhNcJFzj67R6AYx9zTTx3",
+	"tokenId": 124,
+	"name": "Trump Coded-In #124",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

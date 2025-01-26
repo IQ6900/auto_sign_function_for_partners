@@ -1,0 +1,23 @@
+{
+	"image": "312544PcnvdTRPJf1Xuof5aNt79EXFmSjT8pJuMQJ4J6niL8yxWLF3LJqNKvE3DvUiWNcgzGXox5vddJw9aGJh6L",
+	"tokenId": 312,
+	"name": "Trump Coded-In #312",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

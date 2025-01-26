@@ -1,0 +1,23 @@
+{
+	"image": "3V7dVNCfHMttbKAtcpwa1TP8VthAUnXX5iB7KEuUCgLWNBzRp3srb3MND1nwH6TznM7VNV8hHAwc4dZiDvtGFYVP",
+	"tokenId": 350,
+	"name": "Trump Coded-In #350",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

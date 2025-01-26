@@ -1,0 +1,23 @@
+{
+	"image": "3axn8utg8K1RKhzPeiY1jF7oN6FjdXTtDZgGsDUF1uuhhiJxHi1HEtczGk5UcKSq2NfPQr1GdBv4UXMBP6WaEmLM",
+	"tokenId": 14,
+	"name": "Trump Coded-In #14",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

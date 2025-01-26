@@ -1,0 +1,23 @@
+{
+	"image": "2gqAUoeNoXadFid3oozDkcHez3hUF1d5Pra7zi3sKUprKWkMv5HumRgSwr5JsLe8ZyKSz1zDppjkkgsG4H5VVLZ3",
+	"tokenId": 458,
+	"name": "Trump Coded-In #458",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

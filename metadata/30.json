@@ -1,0 +1,23 @@
+{
+	"image": "3qGaca3v3uR9DAHSpfYh2SCXMPf4nYuPqmYw3JE8hrUZysa6zpN9PHm7Uhnr423AzzRUtd1pSsd2PEg1srM9jQky",
+	"tokenId": 30,
+	"name": "Trump Coded-In #30",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

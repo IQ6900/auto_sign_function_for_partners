@@ -1,0 +1,23 @@
+{
+	"image": "48UaJgEXb9ASoccBtRtmL6VLzm34TXPuE7DLqGkw6qQ3dsBc6F1Lpx5FYRz4mWtquxLEoGs1EGgpP7TSvdAdMfrQ",
+	"tokenId": 453,
+	"name": "Trump Coded-In #453",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

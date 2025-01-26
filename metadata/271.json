@@ -1,0 +1,23 @@
+{
+	"image": "G1sGcjrCnTzwCnmLFh5fV9gabxx6vsCvi8mCgYgVETkE2FYpdEAxNSj5WyzUm15ZgTtjdtHcya97y9p7dzKZvba",
+	"tokenId": 271,
+	"name": "Trump Coded-In #271",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

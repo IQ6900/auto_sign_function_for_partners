@@ -1,0 +1,23 @@
+{
+	"image": "2AS9q2MNKsKRFqQi4o1K9RsmQQwwC1umHSZS67worq6izox4Xg9iEV8JVnULvdUT52nEd9nW5dhuSPu7sKqTPeQC",
+	"tokenId": 436,
+	"name": "Trump Coded-In #436",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

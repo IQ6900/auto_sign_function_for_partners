@@ -1,0 +1,23 @@
+{
+	"image": "3umBEmv9bNX8bZ7eHeBeF8m2K6qn5qWxEmXFiNJL2m7sZHMHQwXeBxYt7ogDy8SAhU6T1f3rMNBYFGMVAaBtW77P",
+	"tokenId": 176,
+	"name": "Trump Coded-In #176",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

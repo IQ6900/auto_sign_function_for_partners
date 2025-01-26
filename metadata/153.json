@@ -1,0 +1,23 @@
+{
+	"image": "4PSpEXnCqpTL1gw7emCa2ADCzx3vkaCLK8he6wkZjyuBSQ9zi2SYUrbTvZj1UNmBhdiqrRRZVq2vSo28PMLm8VFt",
+	"tokenId": 153,
+	"name": "Trump Coded-In #153",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

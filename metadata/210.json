@@ -1,0 +1,23 @@
+{
+	"image": "3TSZGHLBah1UdEW5b3hjkvjPt7njpbUXCRK1U4vABjAPGhSZCgqbiB5MuXNa2Z65V7HtKbWyr9URWvHsXtGzKuFC",
+	"tokenId": 210,
+	"name": "Trump Coded-In #210",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

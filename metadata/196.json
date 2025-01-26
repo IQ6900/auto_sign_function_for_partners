@@ -1,0 +1,23 @@
+{
+	"image": "4r9aFPaKAxzoGyc25KJPyFo9Y2bnCZW19hm2ucDoXhy3p55sffVaEoxw7SEtUJnAH7yrJJeY22vu9xd88HpFpuRt",
+	"tokenId": 196,
+	"name": "Trump Coded-In #196",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

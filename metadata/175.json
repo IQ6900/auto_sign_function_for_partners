@@ -1,0 +1,23 @@
+{
+	"image": "XQ6YETUbd7uEJwcUgrsAGDMDdft9qc48PXMdwXUqSGKRXFJUi7YhsVF8jr5WSYDaVmwJvw4ijUBUAAVpgL3Juph",
+	"tokenId": 175,
+	"name": "Trump Coded-In #175",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

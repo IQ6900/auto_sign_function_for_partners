@@ -1,0 +1,23 @@
+{
+	"image": "3Y5itNn61CPcTAY6dRLLo1XQ7Ep9Xd1cWos5jZhaiyeRygn12GFZZsrFonUHiSe4FJufDbLCTat3XF6uWhR1EFj4",
+	"tokenId": 396,
+	"name": "Trump Coded-In #396",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

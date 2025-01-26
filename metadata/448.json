@@ -1,0 +1,23 @@
+{
+	"image": "3rcJqdnrkQfCMwTjP4VFy92hxggRVoMWVaUfpr8W8WxPcEV3Sv6r3imHcP2vNKvYLGox4tHVnpbDpCurn7nFew8L",
+	"tokenId": 448,
+	"name": "Trump Coded-In #448",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

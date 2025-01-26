@@ -1,0 +1,23 @@
+{
+	"image": "Bu96Q4KMawnHq9vmrJwxEMbduC1qzuTUFYVzTemD43ARk2sBhc75eiTtUmiJ6EyprqBZcxQo8P7bPfgCRbvfjzo",
+	"tokenId": 185,
+	"name": "Trump Coded-In #185",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

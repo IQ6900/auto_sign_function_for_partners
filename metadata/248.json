@@ -1,0 +1,23 @@
+{
+	"image": "5BWUdfUWpG8xjh9LeafW5ZV5jW5E5ViVYnfq6aLAFXtCy3ievBH6GQiXiACVUqHjPqAVvJvyzJDXBEYam58Tej6x",
+	"tokenId": 248,
+	"name": "Trump Coded-In #248",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

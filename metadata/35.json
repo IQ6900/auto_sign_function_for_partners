@@ -1,0 +1,23 @@
+{
+	"image": "26nj42tEZecyL2dGNkgW3EdEVFmmnionSmpsK68o8gM82BBTVBnGEBB6goNGLk6PquFEFTwxaPVzxZcFGYJguk3S",
+	"tokenId": 35,
+	"name": "Trump Coded-In #35",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

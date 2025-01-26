@@ -1,0 +1,23 @@
+{
+	"image": "5QxCWePLKv9nBViKvctBDYA6PKeT95rz7yC6GL9z4UxmBvJsXihVJLPKaUWkK2oHzLK831Dg1VGnFAyeaNPNokJd",
+	"tokenId": 313,
+	"name": "Trump Coded-In #313",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

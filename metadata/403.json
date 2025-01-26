@@ -1,0 +1,23 @@
+{
+	"image": "3qJtZzqgof4Qqrfua6ZvMrtso1CBW4sxLU2C4hLU63qMpbWRYZoQ6oKPExwWdWkawXJ7tXpB3nkCxLuBheMu21gC",
+	"tokenId": 403,
+	"name": "Trump Coded-In #403",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "5iWyocRmMEYj918VdQjxgeKJDDDFsVgLwmZHKV7dMPvv1p17iicUUjrraUu4qGfXZLq89dwvgKEa4EnzWiXcyL4w",
+	"tokenId": 187,
+	"name": "Trump Coded-In #187",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

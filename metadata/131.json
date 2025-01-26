@@ -1,0 +1,23 @@
+{
+	"image": "5B1gMF7c4ryBTtAisdHXenDD7e3SfwzvR7RtkzkM97vbG1aKJyudwjhKfL3bLBfZC5S262QzNm97pNhw2MiHhacF",
+	"tokenId": 131,
+	"name": "Trump Coded-In #131",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

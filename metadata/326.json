@@ -1,0 +1,23 @@
+{
+	"image": "4qsXi4bShxQkRjePBi2qwrUrtfARYtUYm7u23nFM1SBrtVguLRVjaoGyv64QSFLeTX3u5Q3GSPLeUPdHJU54WA6h",
+	"tokenId": 326,
+	"name": "Trump Coded-In #326",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

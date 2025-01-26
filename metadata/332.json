@@ -1,0 +1,23 @@
+{
+	"image": "4Y8TLKX1nrGDi1uSo5JHruVzQgGhshstmZPvaRQWXKmmeLKCqGp7NoXG7WfHmNTQ5qf8Xw6QzUQ1BK5GW3Z4MzWT",
+	"tokenId": 332,
+	"name": "Trump Coded-In #332",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

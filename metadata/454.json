@@ -1,0 +1,23 @@
+{
+	"image": "PSrEJegRgdEkcQBkaJK3xPm5PpCZna5xUeEYrv7V24eF4LVBv3RNfi6vKEkvhStiRXjHVVSfXYnWNuPLqVPwnki",
+	"tokenId": 454,
+	"name": "Trump Coded-In #454",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

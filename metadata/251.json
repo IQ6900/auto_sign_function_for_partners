@@ -1,0 +1,23 @@
+{
+	"image": "51r5ryyuBaMSaB6iGuSJJmtsxhh2sYQXNPrNGHKGTNSjwkFYd35iBQHv6m6Zkq3qGPhQq5oDotTf1At1CbTT7jUy",
+	"tokenId": 251,
+	"name": "Trump Coded-In #251",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

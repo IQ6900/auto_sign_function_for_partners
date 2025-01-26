@@ -1,0 +1,23 @@
+{
+	"image": "7NP5KN3vocnsEq7kiHSc1LpUsKKVytjHrzxbbjb1rEJ3WrGCmzagfxNq6RNH4Jvo5Dd82vPyBAnbVT1feB8PfFk",
+	"tokenId": 7,
+	"name": "Trump Coded-In #7",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

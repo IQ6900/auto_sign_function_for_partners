@@ -1,0 +1,23 @@
+{
+	"image": "5aTfJrNjRkREqshs2L3dgFNiHLn3A17t1jZw6WfGbvSR9AbogAXwAC7VBxK2ngizExrk3mSPVGWpYSM4uL4n8VaG",
+	"tokenId": 257,
+	"name": "Trump Coded-In #257",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

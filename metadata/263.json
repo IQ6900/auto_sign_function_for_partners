@@ -1,0 +1,23 @@
+{
+	"image": "5ew5pPvf3kR8JK2tzc8xDYRWy4NjHHxPuBxscurq53DmRuaBFqLYLYxQLwzhn6dShkMCtfvxuHcqrN14145qKqYr",
+	"tokenId": 263,
+	"name": "Trump Coded-In #263",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

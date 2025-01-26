@@ -1,0 +1,23 @@
+{
+	"image": "2tMTkU5CmtsFNCxgxG6ibz8YWQSrF5BWFdh3y1Ccy19HkdTETaytZ94dc5HqgggZZzxQPDE75iKcyzD1g8qA1XJb",
+	"tokenId": 1,
+	"name": "Trump Coded-In #1",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

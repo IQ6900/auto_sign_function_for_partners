@@ -1,0 +1,23 @@
+{
+	"image": "49yTXpthNzEwoQQahBEspr2jzJRSnr2LL1Wsgh5CmXUQRaAoC5ubh9iM6uaefhu5ffs54J5icgLahuuHcbH5QJuB",
+	"tokenId": 443,
+	"name": "Trump Coded-In #443",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "3d5PAAqzvCWhEiCn5uufAudVP7kroD4CjwijcZYobtUdKkX9z7XmLYDcSZ8GhjJ59sVwkByzdSNj8uUMzFH7CidB",
+	"tokenId": 217,
+	"name": "Trump Coded-In #217",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

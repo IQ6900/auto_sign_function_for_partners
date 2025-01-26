@@ -1,0 +1,23 @@
+{
+	"image": "m5y31EC4VZEDbPfxuqBf8rcnqkst138CvTuA9bourmjVXuhbRjLLSuXHH47tkmrPNxSeRomZppgyNRfrd7ffJzf",
+	"tokenId": 412,
+	"name": "Trump Coded-In #412",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

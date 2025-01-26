@@ -1,0 +1,23 @@
+{
+	"image": "4HV3LAd7FN4nbQtqBePhS86T1MFy9wFm3ZdJdvBa4JRnE67YEGFBWePUv4WJFNvDZyYfDGjAy1ZfAuiVhtYByGiW",
+	"tokenId": 45,
+	"name": "Trump Coded-In #45",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

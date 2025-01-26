@@ -1,0 +1,23 @@
+{
+	"image": "4kS4kKZdxPUq6GEDQH4b4RC5BAQgRF2ZhiAQdM5jvVYADj2LSEp8mVhhEUH5BRrEbQbWsXpcmKTGYbTbFiFLvaui",
+	"tokenId": 17,
+	"name": "Trump Coded-In #17",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "3dF8aZyWhjY1ECby9XS96Je9LV6A1XwkfFguFPcHEvJpsSwG7DTGJccRuF5f6mnY1DtoA8AkpviFAPsjSXm6kGwg",
+	"tokenId": 343,
+	"name": "Trump Coded-In #343",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

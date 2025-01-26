@@ -1,0 +1,23 @@
+{
+	"image": "3gXA1PugE2Tsq8aCBtBHYUursHBuKriYXuPJoncuzFPnFpJUAS9pL2hwhpsDkbha1vaKtkkdiQYRnSmPgBKCp4dn",
+	"tokenId": 216,
+	"name": "Trump Coded-In #216",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "at9dbPgWAh6Yc6z5hcMzjmwzXRd9ThBPqHqGWw3BHJ8C3k8JXwd9uC9ZUsFo2X79Huss8voYBaCrVMD5tKw9GB8",
+	"tokenId": 180,
+	"name": "Trump Coded-In #180",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

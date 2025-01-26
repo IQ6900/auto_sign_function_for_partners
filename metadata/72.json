@@ -1,0 +1,23 @@
+{
+	"image": "5DkLrUT7heU8aYdHEXH7bq5QNGQyHbg8jnBbP3Xw3iARdGjmF9kNkWbhxvyNSvZJ9Y72y1zrkbegoyTwurk5iSHN",
+	"tokenId": 72,
+	"name": "Trump Coded-In #72",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

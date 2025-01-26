@@ -1,0 +1,23 @@
+{
+	"image": "5n3nEhbCVQrvQyAN1qgMSyZMryX7fTgos3hGRE3c9SmUww25iMwRZ6qSHuBakaAJT8MTofqtieQDdRaY1sbGN6nd",
+	"tokenId": 50,
+	"name": "Trump Coded-In #50",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

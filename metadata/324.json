@@ -1,0 +1,23 @@
+{
+	"image": "2CqGXHMx2DP3G4H8fYmfcQa77aqk31FPZFiikqkaNhgEamVbHKJACawNYzX2F6MsvZZtiTYzyKRL29CfBmMceeiH",
+	"tokenId": 324,
+	"name": "Trump Coded-In #324",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

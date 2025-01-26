@@ -1,0 +1,23 @@
+{
+	"image": "3rJzVq8xSuaX7MQVLg4jJe8XKNisJrS7SPFvvWbS4WcoaVjZ9QgvF3sGue2jB7W32fVHXr7w9K9cknBJsUPs4M8",
+	"tokenId": 181,
+	"name": "Trump Coded-In #181",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

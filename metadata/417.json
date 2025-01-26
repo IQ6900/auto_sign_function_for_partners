@@ -1,0 +1,23 @@
+{
+	"image": "43oiEs6UALe49NL7YVnjgeJEAhP9PtHt9hMJhbbLE6dTbMs4rsV8mygbrvpGzkAYBcQijMc3fz6tPsrnCPFU4ZRt",
+	"tokenId": 417,
+	"name": "Trump Coded-In #417",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

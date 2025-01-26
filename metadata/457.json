@@ -1,0 +1,23 @@
+{
+	"image": "2yoWC9PB7qod62v8mWmpmXyDFWqSvi7xYVbtYPanyFhtK5JcYuNuWb3wjPRdhpyTTB6LcjQA9r5tnZSxX7tcuqMB",
+	"tokenId": 457,
+	"name": "Trump Coded-In #457",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

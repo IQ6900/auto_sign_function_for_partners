@@ -1,0 +1,23 @@
+{
+	"image": "4qFzQyZDFVRisnnLBuEPNxDruYxhFu8oeZmdVgphkfuuZH8y4mHRS4aRgNXWWWapJ5mMpFXgqmoTavm5LUerSG82",
+	"tokenId": 106,
+	"name": "Trump Coded-In #106",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

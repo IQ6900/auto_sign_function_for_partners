@@ -1,0 +1,23 @@
+{
+	"image": "5wV2XwEHKWY4DE51EMRAk56s47NM5HhRYEUZXgcD4b1Xut55ff9rmGo4GWmbbrwiRak3SbqGRddzbD6a3enueL5B",
+	"tokenId": 113,
+	"name": "Trump Coded-In #113",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

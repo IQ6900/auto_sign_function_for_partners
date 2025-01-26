@@ -1,0 +1,23 @@
+{
+	"image": "4Nb5N4eBYtxPGXCKS4iMFZ3idPZtMPb7JDbLR6aRum68XrPmLQzSdF2U9ifLbxDHzAWJuA7eQaFsjNbVHsZDb8R9",
+	"tokenId": 395,
+	"name": "Trump Coded-In #395",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

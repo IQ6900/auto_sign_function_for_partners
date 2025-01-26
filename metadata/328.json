@@ -1,0 +1,23 @@
+{
+	"image": "4DyMQhweXnZvoJ3nAkNwBdXHB4tnqUMt2GeoAG26WfK1Zr2x7Rf7RbynmWPSRL2difMi8oYBXe5f7Y2Tep3fax24",
+	"tokenId": 328,
+	"name": "Trump Coded-In #328",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

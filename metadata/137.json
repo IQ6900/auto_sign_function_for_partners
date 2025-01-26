@@ -1,0 +1,23 @@
+{
+	"image": "3huNKfqd5S46qYQVDVeXgB7ekgyRuu9aoJRaf9VJWavVzeh3KMgRt95tkukhrqWLmeaVNK2JfwFFgd7JLdTaVAM8",
+	"tokenId": 137,
+	"name": "Trump Coded-In #137",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "love_usa"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

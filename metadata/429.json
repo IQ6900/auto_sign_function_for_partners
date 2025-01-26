@@ -1,0 +1,23 @@
+{
+	"image": "3rfagFPKbRLH46dn72yNUPbFTmgGybj8LUvByL4VeG8zwBfZjdPKYZvgkjDAGAtkRC7F1uT51dFiGQjX59TDe54A",
+	"tokenId": 429,
+	"name": "Trump Coded-In #429",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

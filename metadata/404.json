@@ -1,0 +1,23 @@
+{
+	"image": "3SG1tavJ3vh5rZUB3s7b7PFt5316kcpJQoGznfqaBoN5dCr9xWuecR1KBeGD5bs5SuvR6Djxz3NyKCdJkWtUTfne",
+	"tokenId": 404,
+	"name": "Trump Coded-In #404",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

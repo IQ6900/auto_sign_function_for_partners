@@ -1,0 +1,23 @@
+{
+	"image": "CvcD4ochzipJowYra6nptHmGoKdUZMnsu6LRD4Z9ELmUoJgvRUgsKckkGXW6AEU9rafkr4fZKEgMJHVmAobk2Ju",
+	"tokenId": 160,
+	"name": "Trump Coded-In #160",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

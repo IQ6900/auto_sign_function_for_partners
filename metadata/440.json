@@ -1,0 +1,23 @@
+{
+	"image": "2cWFPGUHG7TQbW2ecDMzeUZ5gVqM2erDBtEqskRC3HSvirLNBjv8akhxsisrbWQ7FqkP9RLbmQtnVPFLjKw6GYyU",
+	"tokenId": 440,
+	"name": "Trump Coded-In #440",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

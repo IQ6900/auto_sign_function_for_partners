@@ -1,0 +1,23 @@
+{
+	"image": "3GrE4Px9aMJbw57U66hYVPmACtYRTAXuCnDDRZJ5YsVKHt5omJeVuzbBAEf7yGv23XhH9hNp1PmfNowZcBfHRGQv",
+	"tokenId": 298,
+	"name": "Trump Coded-In #298",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

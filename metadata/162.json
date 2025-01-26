@@ -1,0 +1,23 @@
+{
+	"image": "3D4fSYt6SmZkP5CAE3h7Xm7HhmLPkwUNJ12Cruc2w9gx8VmfyPbohR125Pt9bitxt4xFR8nse8T2Kk2mrdyrGS3e",
+	"tokenId": 162,
+	"name": "Trump Coded-In #162",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "retro_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

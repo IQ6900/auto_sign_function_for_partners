@@ -1,0 +1,23 @@
+{
+	"image": "4tCbQzJ44UkmHTcBeQxVd6Fc63FdddD8YSgEHuZpxVYdALddc5BRTy24Bx26bW7rCVxD6gi533o4dMyxNKxPy5Xk",
+	"tokenId": 327,
+	"name": "Trump Coded-In #327",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

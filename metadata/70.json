@@ -1,0 +1,23 @@
+{
+	"image": "4BhTviUBnyxXvP9TG5MQfgAjYzqa5rcz6jxocMzrvsUPdAPxu2idbzm5PgEncxBApzgDKjSsP1MQjehdoLpuKjup",
+	"tokenId": 70,
+	"name": "Trump Coded-In #70",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

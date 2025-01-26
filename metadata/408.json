@@ -1,0 +1,23 @@
+{
+	"image": "5pfWsYD48GVr6fbTXePUsHDfy6wzzGGSk28M4x7tp3YTuTeH3nMhgheBjrsQf9S4wvL38pk3yMNn8mcAvWC6pjbc",
+	"tokenId": 408,
+	"name": "Trump Coded-In #408",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

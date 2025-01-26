@@ -1,0 +1,23 @@
+{
+	"image": "2wGeUWDtp1w7k8TeNwwK987UqiSrjZHghXqnHdR9oQBhrqGhLn61f4vp4Je5ke1w9yXoRZ6HszhxNt5KN9MsDekM",
+	"tokenId": 190,
+	"name": "Trump Coded-In #190",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

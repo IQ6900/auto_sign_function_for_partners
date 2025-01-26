@@ -1,0 +1,23 @@
+{
+	"image": "37LtTzv8hTxbNudT3PoTaQXF8aidbjVQemFMn2Q3u9t7PQWxft44CnKMepE2jViAroweLnkGyHN3co3cvGMFFBDS",
+	"tokenId": 425,
+	"name": "Trump Coded-In #425",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flag_basic"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

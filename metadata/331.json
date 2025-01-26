@@ -1,0 +1,23 @@
+{
+	"image": "4zJNJjZiR48zJicG6qiLkUabGP7YAGZWZdGiW5rGA9iN44nzyq98nRDdDBDLVcefFYu9zUQKRfKCT6rqNv7XQtq6",
+	"tokenId": 331,
+	"name": "Trump Coded-In #331",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

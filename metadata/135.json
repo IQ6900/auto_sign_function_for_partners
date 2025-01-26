@@ -1,0 +1,23 @@
+{
+	"image": "5aDkD1CnX8pNpJWkNjx4FtUzh9L5ywKYUwf5Ax7ynph5FDv6SdbwUtqus4TpKc7yNyaRMfgXnYp17cSveCpZvtku",
+	"tokenId": 135,
+	"name": "Trump Coded-In #135",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

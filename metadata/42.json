@@ -1,0 +1,23 @@
+{
+	"image": "5y6z11BtCk8WdWoqEeDruc1viSz43fCvTGoRJ2EAWCxVC1YdPWz6RaajRuQF2modPfwtgCoXGoxLkYPEo59JvwvK",
+	"tokenId": 42,
+	"name": "Trump Coded-In #42",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

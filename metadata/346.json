@@ -1,0 +1,23 @@
+{
+	"image": "4DBbDFAMiRR6pd8ZyB8a3d1x2wrwByP7piDH9iN1mYjFQP6CZuhoWKHrHiJLgSSWLojuRQQRa53FnRK7Y9W7RxMB",
+	"tokenId": 346,
+	"name": "Trump Coded-In #346",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

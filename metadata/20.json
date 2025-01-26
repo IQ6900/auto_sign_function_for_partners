@@ -1,0 +1,23 @@
+{
+	"image": "5m8KTLHoEztCn1Df3sgUC6ZY5CFDBTsyB8JTG7KiRLHZE7jhCQXXUiWicX2Bnn2F328iU9L3tRKAUJUEKiyPmHnW",
+	"tokenId": 20,
+	"name": "Trump Coded-In #20",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "old_cafe"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

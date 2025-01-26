@@ -1,0 +1,23 @@
+{
+	"image": "59o9sBa6Px2y37FgKKsD7mCD5AjqZKf4Cs2WC4Kms8KVDBHJbje5wLX6BqnPZrnnwCqJe39oQciPe4ve7wFDyTf5",
+	"tokenId": 460,
+	"name": "Trump Coded-In #460",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

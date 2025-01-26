@@ -1,0 +1,23 @@
+{
+	"image": "4ZPsCxDg4Uyocg5SnMifXyWrc95LhpmmExo9GX757cyJoXbmWDMyHus83T4jRbMWtQabSYhce1E4VYQD9XJCKAr7",
+	"tokenId": 110,
+	"name": "Trump Coded-In #110",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

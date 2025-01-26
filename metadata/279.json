@@ -1,0 +1,23 @@
+{
+	"image": "46r4Jio97jGB2srh2C9EvJB6ctyYaMyiGpuYXoMPxpao7zxBuKJxsQdS7PZmAn99BNZESL3UJkkeXcpbq8sh5Xay",
+	"tokenId": 279,
+	"name": "Trump Coded-In #279",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

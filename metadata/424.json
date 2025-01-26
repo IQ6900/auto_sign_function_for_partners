@@ -1,0 +1,23 @@
+{
+	"image": "3x8vgciTyGP13VsddfgRQJk72QCTPGfFxxG278HQ2DkGu1ACXsUg5Gh3hMXydvcDztDzNsfABJQeoAzrPaBToW3w",
+	"tokenId": 424,
+	"name": "Trump Coded-In #424",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga3"
+		}
+	]
+}

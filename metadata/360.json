@@ -1,0 +1,23 @@
+{
+	"image": "3t8n2c2VHHLp8Lsd7494APhnEEc75YKsKBMuJRF1kWhtgPQQ4Ykzd6o1Uv5tLTPQrChUwdu1LhePH7pp41KCLb4p",
+	"tokenId": 360,
+	"name": "Trump Coded-In #360",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

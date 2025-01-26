@@ -1,0 +1,23 @@
+{
+	"image": "3BiwnRjaR5bMKnWsiNbfnaUh41zmpw2J6Sypdz9tjEzAsAtaWRZcRAoHJVVaQZ2jGoVoJDSgCN76ebG98wyQyiY9",
+	"tokenId": 455,
+	"name": "Trump Coded-In #455",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

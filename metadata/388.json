@@ -1,0 +1,23 @@
+{
+	"image": "4z8GBd7mWDfvp3uj6g1VtC5kDVo1RNCZfcEacuUvgmrCqqdjhFRbP7gbp1nyXVEoiuNRNCpTfY6arS2JaWCUdQbj",
+	"tokenId": 388,
+	"name": "Trump Coded-In #388",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "w3KnCdrkSFfTJSphTnUs5bYCCW9WZanhq3MLLnTLpXYHdxYA14eah3BQACnWTbBCiSfdfD4toGqtMq1esKxDe24",
+	"tokenId": 170,
+	"name": "Trump Coded-In #170",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

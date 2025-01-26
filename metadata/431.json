@@ -1,0 +1,23 @@
+{
+	"image": "UZWckdNSKYq4fwnw2hPm5dBcPtrZihju3Yq511phjCbedFsrEFwXhJapApbUzPEdTPhVw6Rqrv3pa8nGfapSmZV",
+	"tokenId": 431,
+	"name": "Trump Coded-In #431",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga2"
+		}
+	]
+}

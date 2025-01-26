@@ -1,0 +1,23 @@
+{
+	"image": "2TAoe3Y9nksN2EjLSprNcWFJ2ntMup2WmwF7Q53GwJzH221Gi2n544TKWsW3RCTEj2r57cHGqVKhrHih4wNM82Qy",
+	"tokenId": 230,
+	"name": "Trump Coded-In #230",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "hollywood"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

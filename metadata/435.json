@@ -1,0 +1,23 @@
+{
+	"image": "5th5BWK2bX5nPzAPL8rzQM2wFa4PzbHTSs51M5i48dAwYkG4WJypDMzqusfuHNueugvJh3HZ31ixz6S9yMW4wgDE",
+	"tokenId": 435,
+	"name": "Trump Coded-In #435",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "flags"
+		},
+		{
+			"trait_type": "Body",
+			"value": "jacket"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

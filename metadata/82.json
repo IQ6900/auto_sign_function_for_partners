@@ -1,0 +1,23 @@
+{
+	"image": "4KYUJRm8a9YzfsWTbXQKzwzoj4Yvw8eVWrXZzWSsDJ6MFCVo2cozrvNsy2kxQer4CYPAgmsJsek546BA6ekUvgqG",
+	"tokenId": 82,
+	"name": "Trump Coded-In #82",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "statue_of_liberty"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

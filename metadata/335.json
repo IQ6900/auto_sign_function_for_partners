@@ -1,0 +1,23 @@
+{
+	"image": "wu1Wswyc3fkR8Dn41zRwTNQGxjLLh7DydubcHyz3Yvpv5JtRCqhFpKeigRZcZ6okj9NoCUDJPdnirSmLpGCBXqK",
+	"tokenId": 335,
+	"name": "Trump Coded-In #335",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"image": "3sKX7M2wF8LBkXGAmysisUukEkBuRdgFSEXJ171KBC7J8UomqJv2f48CKYJDmjdoQzwvp56EQbDEDmx2Tb78Pb66",
+	"tokenId": 364,
+	"name": "Trump Coded-In #364",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "sports_tshirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "happy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

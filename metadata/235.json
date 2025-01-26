@@ -1,0 +1,23 @@
+{
+	"image": "WbntAKXmaEH5S38MsUC8M5YPgNMa3PWku7ipek14Jr84RAbxGMa2JiPBeMy4HLnUYwmnEau4MEMotjaLe5CXFVM",
+	"tokenId": 235,
+	"name": "Trump Coded-In #235",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "sky_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

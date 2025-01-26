@@ -1,0 +1,23 @@
+{
+	"image": "53eA5i3HBQhdQRRH2H4AJmjSEbZphaECJTxcFifqJNUPLYZjFMXbWgVbhdpsifjFrzUU889uX77G9nHiuhr88aYs",
+	"tokenId": 40,
+	"name": "Trump Coded-In #40",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

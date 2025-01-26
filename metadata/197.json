@@ -1,0 +1,23 @@
+{
+	"image": "3p2VRALCthq1XNQT5Cq1NYwkKBGEUJCrNkitNAh9q3wFSBBmnW3pEv95zVBXT51GAainiDrnfv8dL6XNw8PhHFGd",
+	"tokenId": 197,
+	"name": "Trump Coded-In #197",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "satisfied"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

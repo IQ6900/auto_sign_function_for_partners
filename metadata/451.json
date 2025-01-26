@@ -1,0 +1,23 @@
+{
+	"image": "5X1R36SC1KZamBuEZsLJu7Hndm7Ku3hr3E77Zd3PbHfHyt5XfHcPNhZYQdL5Kf5SkfygFXFpG5rpmTpfVBuv7TPW",
+	"tokenId": 451,
+	"name": "Trump Coded-In #451",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "coca_cola"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

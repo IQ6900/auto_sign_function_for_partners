@@ -1,0 +1,23 @@
+{
+	"image": "2Mwbxn7SM2pQsEvxeTFQSxCKJrrBrdwJEFni8Mrra7eRanJEjdZ6iRLMsFLPv5xYGkSKy5Zbpe8UBjzg7KEF9a3k",
+	"tokenId": 281,
+	"name": "Trump Coded-In #281",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "eagle"
+		},
+		{
+			"trait_type": "Body",
+			"value": "shirt"
+		},
+		{
+			"trait_type": "Face",
+			"value": "focused"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "maga1"
+		}
+	]
+}

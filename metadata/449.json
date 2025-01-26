@@ -1,0 +1,23 @@
+{
+	"image": "4RXYE2wHTQeQrgkVULM1oegKHf2J8CJgg4vvM7b7tQ8SqsYD79yQk7GJy2bFsTyb5saVW7owppZ5QAJdy8pBG52k",
+	"tokenId": 449,
+	"name": "Trump Coded-In #449",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "balloon_flag"
+		},
+		{
+			"trait_type": "Body",
+			"value": "king"
+		},
+		{
+			"trait_type": "Face",
+			"value": "joy"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

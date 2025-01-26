@@ -1,0 +1,23 @@
+{
+	"image": "3nEcM5yCRTJWfJ7X8XmnzHwkanNhAsQAteW4w5MVWqnjHCYYPSEsyx5otiwaPnMZc9AjjqZUTxiXtFpPghmCmw9E",
+	"tokenId": 119,
+	"name": "Trump Coded-In #119",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "star"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}

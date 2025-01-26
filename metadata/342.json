@@ -1,0 +1,23 @@
+{
+	"image": "4K2sUkN1yvWyQj6sFPx1zqNi8945GuW3i6VnieHiuAw7aEKPh12icSSig46DFUSkc9QjPfxjW3o6MJFAMRQMWUcf",
+	"tokenId": 342,
+	"name": "Trump Coded-In #342",
+	"attributes": [
+		{
+			"trait_type": "Background",
+			"value": "usa_nignt"
+		},
+		{
+			"trait_type": "Body",
+			"value": "suit"
+		},
+		{
+			"trait_type": "Face",
+			"value": "speech"
+		},
+		{
+			"trait_type": "Hat",
+			"value": "none"
+		}
+	]
+}
