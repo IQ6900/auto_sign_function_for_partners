@@ -8,7 +8,7 @@ import * as path from "path";
 const anchor = require('@coral-xyz/anchor');
 const express = require('express');
 const cors = require('cors');
-const idl = require("../idl.json");  // Make sure this is the correct path to your IDL file
+const idl = require("./idl.json");  // Make sure this is the correct path to your IDL file
 const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09"
 const iqHost = "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
@@ -581,9 +581,7 @@ async function processMetaDataInFolder(folderPath: string) {
 //--------------------------Example Code--------------------------------
 
 async function run() {
-    const DBPDA = await getDBPDA("72FRpJJHNQWvXvHKHLked6w1ycJagxw5P1VFzjQcw5hN");
-    const onChainDbPdaData = await fetchDataSignatures(DBPDA);
-    const signatures = onChainDbPdaData.reverse().slice(1);
+    const signatures =  await onChainTextIn("your data","your handle");
     console.log("signatures",signatures);
 }
 run()
