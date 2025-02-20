@@ -45,11 +45,11 @@ var path = require("path");
 var anchor = require('@coral-xyz/anchor');
 var express = require('express');
 var cors = require('cors');
-var idl = require("../idl.json"); // Make sure this is the correct path to your IDL file
+var idl = require("./idl.json"); // Make sure this is the correct path to your IDL file
 var network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a-665f06fb5f09";
 var iqHost = "https://solanacontractapi.uc.r.appspot.com";
 var web3 = anchor.web3;
-var secretKeyBase58 = "jj"; //paste your secret key
+var secretKeyBase58 = "secret code"; //paste your secret key
 var secretKey = bs58_1.default.decode(secretKeyBase58);
 var keypair = web3_js_1.Keypair.fromSecretKey(secretKey);
 var transactionSizeLimit = 850;
@@ -57,9 +57,38 @@ var sizeLimitForSplitCompression = 10000;
 var amountToSend = 0.003 * web3.LAMPORTS_PER_SOL;
 var app = express();
 app.use(express.json());
-function getPDA(userKey) {
+function getTransactionResult(tailTx) {
     return __awaiter(this, void 0, void 0, function () {
         var response, data, error_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, fetch("".concat(iqHost, "/get_transaction_result/").concat(tailTx))];
+                case 1:
+                    response = _a.sent();
+                    return [4 /*yield*/, response.json()];
+                case 2:
+                    data = _a.sent();
+                    if (response.ok) {
+                        return [2 /*return*/, data];
+                    }
+                    else {
+                        throw new Error(data.error || 'Failed to fetch PDA');
+                    }
+                    return [3 /*break*/, 4];
+                case 3:
+                    error_1 = _a.sent();
+                    console.error('Error fetching PDA:', error_1);
+                    return [2 /*return*/, undefined];
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+function getPDA(userKey) {
+    return __awaiter(this, void 0, void 0, function () {
+        var response, data, error_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -78,8 +107,8 @@ function getPDA(userKey) {
                     }
                     return [3 /*break*/, 4];
                 case 3:
-                    error_1 = _a.sent();
-                    console.error('Error fetching PDA:', error_1);
+                    error_2 = _a.sent();
+                    console.error('Error fetching PDA:', error_2);
                     return [2 /*return*/, undefined];
                 case 4: return [2 /*return*/];
             }
@@ -88,7 +117,7 @@ function getPDA(userKey) {
 }
 function getDBPDA(userKey) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, error_2;
+        var response, data, error_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -107,8 +136,8 @@ function getDBPDA(userKey) {
                     }
                     return [3 /*break*/, 4];
                 case 3:
-                    error_2 = _a.sent();
-                    console.error('Error fetching PDA:', error_2);
+                    error_3 = _a.sent();
+                    console.error('Error fetching PDA:', error_3);
                     return [2 /*return*/, "null"];
                 case 4: return [2 /*return*/];
             }
@@ -117,7 +146,7 @@ function getDBPDA(userKey) {
 }
 function makeMerkleRootFromServer(dataList) {
     return __awaiter(this, void 0, void 0, function () {
-        var url, requestData, response, responseData, error_3;
+        var url, requestData, response, responseData, error_4;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -146,9 +175,9 @@ function makeMerkleRootFromServer(dataList) {
                     console.log("Merkle Root:", responseData.merkleRoot);
                     return [2 /*return*/, responseData.merkleRoot];
                 case 4:
-                    error_3 = _a.sent();
-                    console.error("Failed to get Merkle Root:", error_3);
-                    throw error_3;
+                    error_4 = _a.sent();
+                    console.error("Failed to get Merkle Root:", error_4);
+                    throw error_4;
                 case 5: return [2 /*return*/];
             }
         });
@@ -156,7 +185,7 @@ function makeMerkleRootFromServer(dataList) {
 }
 function getTransactionInfoOnServer(txId) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, data, error_4, error_5;
+        var response, data, error_5, error_6;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -173,20 +202,19 @@ function getTransactionInfoOnServer(txId) {
                     data = _a.sent();
                     return [2 /*return*/, data.argData];
                 case 4:
-                    error_4 = _a.sent();
-                    console.error('Error creating transaction:', error_4);
+                    error_5 = _a.sent();
+                    console.error('Error creating transaction:', error_5);
                     return [2 /*return*/, null];
                 case 5: return [3 /*break*/, 7];
                 case 6:
-                    error_5 = _a.sent();
-                    console.error('Error creating initTransactionOnServer:', error_5);
+                    error_6 = _a.sent();
+                    console.error('Error creating initTransactionOnServer:', error_6);
                     return [2 /*return*/, null];
                 case 7: return [2 /*return*/];
             }
         });
     });
 }
-;
 function bringOffset(dataTxid) {
     return __awaiter(this, void 0, void 0, function () {
         var txInfo, type_field;
@@ -250,7 +278,7 @@ function txSend(tx) {
 }
 function createSendTransaction(code, before_tx, method, decode_break) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, PDA, program, tx, ix, error_6;
+        var userKey, PDA, program, tx, ix, error_7;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -277,9 +305,9 @@ function createSendTransaction(code, before_tx, method, decode_break) {
                     _a.sent();
                     return [2 /*return*/, tx];
                 case 4:
-                    error_6 = _a.sent();
-                    console.error(error_6);
-                    throw new Error("Failed to create instruction: " + error_6);
+                    error_7 = _a.sent();
+                    console.error(error_7);
+                    throw new Error("Failed to create instruction: " + error_7);
                 case 5: return [2 /*return*/];
             }
         });
@@ -287,7 +315,7 @@ function createSendTransaction(code, before_tx, method, decode_break) {
 }
 function createDbCodeTransaction(handle, tail_tx, type, offset) {
     return __awaiter(this, void 0, void 0, function () {
-        var userKey, DBPDA, program, tx, dbcodefreeix, error_7;
+        var userKey, DBPDA, program, tx, dbcodefreeix, error_8;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -314,8 +342,8 @@ function createDbCodeTransaction(handle, tail_tx, type, offset) {
                     _a.sent();
                     return [2 /*return*/, tx];
                 case 4:
-                    error_7 = _a.sent();
-                    throw new Error("Failed to create instruction: " + error_7);
+                    error_8 = _a.sent();
+                    throw new Error("Failed to create instruction: " + error_8);
                 case 5: return [2 /*return*/];
             }
         });
@@ -521,7 +549,7 @@ function _makeAsciiChunks(asciiArt, width) {
 }
 function OnChainCodeIn(asciiArt) {
     return __awaiter(this, void 0, void 0, function () {
-        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, error_8;
+        var handle, chunkObj, chunkList, chunkSize, merkleRoot, offset, dataType, error_9;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -539,8 +567,8 @@ function OnChainCodeIn(asciiArt) {
                     return [4 /*yield*/, makeAsciiTransactions(chunkList, handle, dataType, offset)];
                 case 2: return [2 /*return*/, _a.sent()];
                 case 3:
-                    error_8 = _a.sent();
-                    console.error("Error signing or sending transaction: ", error_8);
+                    error_9 = _a.sent();
+                    console.error("Error signing or sending transaction: ", error_9);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
@@ -584,7 +612,7 @@ function naturalSort(files) {
 }
 function fetchDataSignatures(address_1) {
     return __awaiter(this, arguments, void 0, function (address, max) {
-        var DBPDA, connection, signaturesInfo, signatures, error_9;
+        var DBPDA, connection, signaturesInfo, signatures, error_10;
         if (max === void 0) { max = 475; }
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -600,8 +628,8 @@ function fetchDataSignatures(address_1) {
                     signatures = signaturesInfo.map(function (info) { return info.signature; });
                     return [2 /*return*/, signatures];
                 case 2:
-                    error_9 = _a.sent();
-                    console.error("Error fetching signatures:", error_9);
+                    error_10 = _a.sent();
+                    console.error("Error fetching signatures:", error_10);
                     return [2 /*return*/, []];
                 case 3: return [2 /*return*/];
             }
@@ -682,7 +710,7 @@ function dataValidationForText(folderPath) {
 }
 function dataValidation(folderPath) {
     return __awaiter(this, void 0, void 0, function () {
-        var notFind, files, sortedFiles, totalFiles, successCount, userKey, DBPDA, onChainDbPdaData, signatures, signatureIndex, i, file, filePath, image, asciiArt, innerOffset, full_msg, textChunks, merkleRoot, onChainMerkleRoot, error_10;
+        var notFind, files, sortedFiles, totalFiles, successCount, userKey, DBPDA, onChainDbPdaData, signatures, signatureIndex, i, file, filePath, image, asciiArt, innerOffset, full_msg, textChunks, merkleRoot, onChainMerkleRoot, error_11;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -753,8 +781,8 @@ function dataValidation(folderPath) {
                     }
                     return [3 /*break*/, 11];
                 case 10:
-                    error_10 = _a.sent();
-                    console.error("Error validation:", error_10);
+                    error_11 = _a.sent();
+                    console.error("Error validation:", error_11);
                     return [3 /*break*/, 11];
                 case 11: return [2 /*return*/];
             }
@@ -763,7 +791,7 @@ function dataValidation(folderPath) {
 }
 function processImagesInFolder(folderPath) {
     return __awaiter(this, void 0, void 0, function () {
-        var files, sortedFiles, totalFiles, successCount, i, file, filePath, image, asciiArt, result, error_11, error_12;
+        var files, sortedFiles, totalFiles, successCount, i, file, filePath, image, asciiArt, result, error_12, error_13;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -804,8 +832,8 @@ function processImagesInFolder(folderPath) {
                     successCount++;
                     return [3 /*break*/, 6];
                 case 5:
-                    error_11 = _a.sent();
-                    console.error("Error processing ".concat(file, ":"), error_11);
+                    error_12 = _a.sent();
+                    console.error("Error processing ".concat(file, ":"), error_12);
                     return [2 /*return*/, false];
                 case 6:
                     console.log("".concat(i + 1, "/").concat(totalFiles, " completed - ").concat(successCount, " success"));
@@ -820,8 +848,8 @@ function processImagesInFolder(folderPath) {
                     console.log("Processing complete. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
                     return [3 /*break*/, 11];
                 case 10:
-                    error_12 = _a.sent();
-                    console.error("Error reading folder:", error_12);
+                    error_13 = _a.sent();
+                    console.error("Error reading folder:", error_13);
                     return [3 /*break*/, 11];
                 case 11: return [2 /*return*/];
             }
@@ -830,7 +858,7 @@ function processImagesInFolder(folderPath) {
 }
 function processMetaDataInFolder(folderPath) {
     return __awaiter(this, void 0, void 0, function () {
-        var files, sortedFiles, totalFiles, successCount, i, file, filePath, data, result, error_13, error_14;
+        var files, sortedFiles, totalFiles, successCount, i, file, filePath, data, result, error_14, error_15;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -870,8 +898,8 @@ function processMetaDataInFolder(folderPath) {
                     return [2 /*return*/, false];
                 case 5: return [3 /*break*/, 7];
                 case 6:
-                    error_13 = _a.sent();
-                    console.error("Error processing ".concat(file, ":"), error_13);
+                    error_14 = _a.sent();
+                    console.error("Error processing ".concat(file, ":"), error_14);
                     return [2 /*return*/, false];
                 case 7:
                     console.log("".concat(i + 1, "/").concat(totalFiles, " completed - ").concat(successCount, " success"));
@@ -886,8 +914,8 @@ function processMetaDataInFolder(folderPath) {
                     console.log("Processing complete. ".concat(successCount, "/").concat(totalFiles, " files processed successfully."));
                     return [2 /*return*/, true];
                 case 11:
-                    error_14 = _a.sent();
-                    console.error("Error reading folder:", error_14);
+                    error_15 = _a.sent();
+                    console.error("Error reading folder:", error_15);
                     return [3 /*break*/, 12];
                 case 12: return [2 /*return*/];
             }
@@ -897,17 +925,13 @@ function processMetaDataInFolder(folderPath) {
 //--------------------------Example Code--------------------------------
 function run() {
     return __awaiter(this, void 0, void 0, function () {
-        var DBPDA, onChainDbPdaData, signatures;
+        var result;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, getDBPDA("72FRpJJHNQWvXvHKHLked6w1ycJagxw5P1VFzjQcw5hN")];
+                case 0: return [4 /*yield*/, getTransactionResult("2cJnqQZ3WwswYLSWwLCjjw9nvRP3gs8P9yNMqikoj9rjjEWbpgsG7FH3ms41Cqzn8pCJGs4mm4H6R3xMw4aZneR1")];
                 case 1:
-                    DBPDA = _a.sent();
-                    return [4 /*yield*/, fetchDataSignatures(DBPDA)];
-                case 2:
-                    onChainDbPdaData = _a.sent();
-                    signatures = onChainDbPdaData.reverse().slice(1);
-                    console.log("signatures", signatures);
+                    result = _a.sent();
+                    console.log("result", result);
                     return [2 /*return*/];
             }
         });

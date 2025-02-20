@@ -13,7 +13,7 @@ const network = "https://mainnet.helius-rpc.com/?api-key=ab814e2b-59a3-4ca9-911a
 const iqHost = "https://solanacontractapi.uc.r.appspot.com";
 const web3 = anchor.web3;
 
-const secretKeyBase58 = "jj"; //paste your secret key
+const secretKeyBase58 = "secret code"; //paste your secret key
 const secretKey = bs58.decode(secretKeyBase58);
 const keypair = Keypair.fromSecretKey(secretKey);
 const transactionSizeLimit = 850;
@@ -25,6 +25,21 @@ const app = express();
 
 app.use(express.json());
 
+
+async function getTransactionResult(tailTx: string): Promise<string | undefined> {
+    try {
+        const response = await fetch(`${iqHost}/get_transaction_result/${tailTx}`);
+        const data = await response.json();
+        if (response.ok) {
+            return data as string;
+        } else {
+            throw new Error(data.error || 'Failed to fetch PDA');
+        }
+    } catch (error) {
+        console.error('Error fetching PDA:', error);
+        return undefined;
+    }
+}
 
 async function getPDA(userKey: string): Promise<string | undefined> {
     try {
@@ -100,7 +115,7 @@ async function getTransactionInfoOnServer(txId: string) {
         console.error('Error creating initTransactionOnServer:', error);
         return null;
     }
-};
+}
 
 async function bringOffset(dataTxid: string) {
     const txInfo = await getTransactionInfoOnServer(dataTxid);
@@ -581,8 +596,11 @@ async function processMetaDataInFolder(folderPath: string) {
 //--------------------------Example Code--------------------------------
 
 async function run() {
-    const signatures =  await onChainTextIn("your data","your handle");
-    console.log("signatures",signatures);
+    // const signatures =  await onChainTextIn("your data","your handle");
+    // console.log("signatures",signatures);
+
+    const result = await getTransactionResult("2cJnqQZ3WwswYLSWwLCjjw9nvRP3gs8P9yNMqikoj9rjjEWbpgsG7FH3ms41Cqzn8pCJGs4mm4H6R3xMw4aZneR1")
+    console.log("result",result);
 }
 run()
 
